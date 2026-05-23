@@ -7,35 +7,35 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#1A0800]">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#C9920E]">
         <BokehBackground />
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-24 pb-16">
           <div>
-            <p className="text-[#C9A84C] tracking-[0.3em] uppercase text-xs mb-6 font-light" style={{ fontFamily: 'var(--font-sans)' }}>
+            <p className="text-[#5C3D0E] tracking-[0.3em] uppercase text-xs mb-6 font-light" style={{ fontFamily: 'var(--font-sans)' }}>
               New Fragrance Launch
             </p>
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-light text-[#F5F0E8] leading-[1.05] mb-8"
+              className="text-5xl md:text-6xl lg:text-7xl font-light text-[#2C1A06] leading-[1.05] mb-8"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               Discover<br />
               The Essence of<br />
-              <span className="text-[#C9A84C]">Ethereal Charm</span>
+              Ethereal Charm
             </h1>
-            <p className="text-[#F5F0E8]/50 text-base leading-relaxed mb-10 max-w-sm" style={{ fontFamily: 'var(--font-sans)' }}>
-              A quintessential, long-lasting gender-neutral parfum that awakens the mind and thrills the senses. Made in London.
+            <p className="text-[#3D2810]/70 text-base leading-relaxed mb-10 max-w-sm" style={{ fontFamily: 'var(--font-sans)' }}>
+              Ethereal Charm introduces its newest fragrance, a quintessential, long-lasting gender-neutral perfume that awakens the mind and thrills the senses. Experience the aliveness of transformation with this luxurious, modern scent.
             </p>
             <div className="flex items-center gap-6">
               <Link
                 href="/shop"
-                className="inline-block px-8 py-4 bg-[#C9A84C] text-[#0A0806] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#E8C876] transition-colors duration-300"
+                className="inline-block px-8 py-4 bg-[#3D2810] text-[#F5F0E8] text-xs tracking-[0.2em] uppercase font-medium hover:bg-[#5C3D18] transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
                 Shop Now
               </Link>
               <Link
                 href="/about"
-                className="text-[#F5F0E8]/40 text-xs tracking-[0.2em] uppercase hover:text-[#C9A84C] transition-colors duration-300"
+                className="text-[#3D2810]/60 text-xs tracking-[0.2em] uppercase hover:text-[#3D2810] transition-colors duration-300"
                 style={{ fontFamily: 'var(--font-sans)' }}
               >
                 Our Story →
@@ -45,7 +45,6 @@ export default function HomePage() {
 
           <div className="flex items-center justify-center">
             <div className="relative w-72 h-96 md:w-80 md:h-[440px]">
-              <div className="absolute inset-0 rounded-full bg-[#C9A84C]/8 blur-3xl scale-110" />
               <Image
                 src="/images/bottle.png"
                 alt="Ethereal Charm Parfum"
@@ -56,7 +55,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1A0800] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0806] to-transparent" />
       </section>
 
       {/* Captivating Fragrance */}

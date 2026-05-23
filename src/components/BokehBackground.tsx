@@ -6,7 +6,7 @@ interface Orb {
   baseX: number
   baseY: number
   radius: number
-  color: [number, number, number]
+  r: number; g: number; b: number
   baseOpacity: number
   driftAmpX: number
   driftAmpY: number
@@ -20,87 +20,78 @@ interface Orb {
   blur: number
 }
 
-const PALETTE: [number, number, number][] = [
-  [193, 128,  68],  // #c18044
-  [212, 160,  23],  // #D4A017
-  [245, 200,  66],  // #F5C842
-  [232, 201, 154],  // #E8C99A
-  [107,  63,  26],  // #6B3F1A
+// Cream / white / warm-yellow orbs that sit beautifully on a golden background
+const ORB_COLORS: [number, number, number][] = [
+  [255, 255, 230], // warm white
+  [255, 248, 195], // cream yellow
+  [255, 235, 150], // light gold
+  [255, 250, 210], // pale cream
+  [240, 210, 120], // warm amber highlight
 ]
 
 function rand(min: number, max: number) {
   return min + Math.random() * (max - min)
 }
 
+function pick<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)]
+}
+
 function buildOrbs(w: number, h: number): Orb[] {
   const orbs: Orb[] = []
 
-  // 4 hero anchor orbs — enormous, barely move, set the scene
+  // 5 large anchor orbs — the big dreamy blobs visible in the Wix screenshot
   const anchors: [number, number, number, number][] = [
-    [0.08, 0.55, 340, 0.22],
-    [0.88, 0.35, 300, 0.18],
-    [0.50, 0.80, 380, 0.14],
-    [0.72, 0.10, 260, 0.16],
+    [0.05, 0.60, 280, 0.28],
+    [0.82, 0.40, 320, 0.22],
+    [0.55, 0.85, 350, 0.18],
+    [0.90, 0.10, 240, 0.20],
+    [0.30, 0.15, 200, 0.16],
   ]
   anchors.forEach(([fx, fy, r, op]) => {
+    const [rc, g, b] = pick(ORB_COLORS)
     orbs.push({
-      baseX: fx * w,
-      baseY: fy * h,
-      radius: r,
-      color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
+      baseX: fx * w, baseY: fy * h,
+      radius: r, r: rc, g, b,
       baseOpacity: op,
-      driftAmpX: rand(20, 50),
-      driftAmpY: rand(15, 35),
-      driftSpeedX: rand(0.00012, 0.00025),
-      driftSpeedY: rand(0.00010, 0.00022),
-      phaseX: rand(0, Math.PI * 2),
-      phaseY: rand(0, Math.PI * 2),
-      breathAmp: rand(0.04, 0.08),
-      breathSpeed: rand(0.0004, 0.0009),
+      driftAmpX: rand(25, 60), driftAmpY: rand(20, 45),
+      driftSpeedX: rand(0.0006, 0.0014), driftSpeedY: rand(0.0005, 0.0012),
+      phaseX: rand(0, Math.PI * 2), phaseY: rand(0, Math.PI * 2),
+      breathAmp: rand(0.04, 0.09), breathSpeed: rand(0.001, 0.002),
       breathPhase: rand(0, Math.PI * 2),
-      blur: rand(60, 110),
+      blur: rand(55, 100),
     })
   })
 
-  // 10 mid-sized floating orbs
-  for (let i = 0; i < 10; i++) {
+  // 14 medium floating orbs — rapid drift
+  for (let i = 0; i < 14; i++) {
+    const [rc, g, b] = pick(ORB_COLORS)
     orbs.push({
-      baseX: rand(0, w),
-      baseY: rand(0, h),
-      radius: rand(60, 160),
-      color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
-      baseOpacity: rand(0.18, 0.38),
-      driftAmpX: rand(40, 100),
-      driftAmpY: rand(30, 80),
-      driftSpeedX: rand(0.00018, 0.0005),
-      driftSpeedY: rand(0.00015, 0.00045),
-      phaseX: rand(0, Math.PI * 2),
-      phaseY: rand(0, Math.PI * 2),
-      breathAmp: rand(0.06, 0.14),
-      breathSpeed: rand(0.0007, 0.0018),
+      baseX: rand(0, w), baseY: rand(0, h),
+      radius: rand(40, 130), r: rc, g, b,
+      baseOpacity: rand(0.22, 0.48),
+      driftAmpX: rand(50, 120), driftAmpY: rand(40, 100),
+      driftSpeedX: rand(0.001, 0.003), driftSpeedY: rand(0.0008, 0.0025),
+      phaseX: rand(0, Math.PI * 2), phaseY: rand(0, Math.PI * 2),
+      breathAmp: rand(0.08, 0.18), breathSpeed: rand(0.002, 0.005),
       breathPhase: rand(0, Math.PI * 2),
-      blur: rand(20, 55),
+      blur: rand(15, 45),
     })
   }
 
-  // 8 small bright accent sparks
-  for (let i = 0; i < 8; i++) {
+  // 16 small bright sparkle bubbles — fast and lively
+  for (let i = 0; i < 16; i++) {
+    const [rc, g, b] = pick(ORB_COLORS)
     orbs.push({
-      baseX: rand(0, w),
-      baseY: rand(0, h),
-      radius: rand(12, 40),
-      color: PALETTE[1 + Math.floor(Math.random() * 3)], // brighter range
-      baseOpacity: rand(0.40, 0.70),
-      driftAmpX: rand(60, 130),
-      driftAmpY: rand(50, 110),
-      driftSpeedX: rand(0.00025, 0.0007),
-      driftSpeedY: rand(0.00020, 0.0006),
-      phaseX: rand(0, Math.PI * 2),
-      phaseY: rand(0, Math.PI * 2),
-      breathAmp: rand(0.12, 0.28),
-      breathSpeed: rand(0.001, 0.003),
+      baseX: rand(0, w), baseY: rand(0, h),
+      radius: rand(6, 28), r: rc, g, b,
+      baseOpacity: rand(0.55, 0.90),
+      driftAmpX: rand(70, 160), driftAmpY: rand(60, 140),
+      driftSpeedX: rand(0.002, 0.006), driftSpeedY: rand(0.0018, 0.005),
+      phaseX: rand(0, Math.PI * 2), phaseY: rand(0, Math.PI * 2),
+      breathAmp: rand(0.15, 0.35), breathSpeed: rand(0.004, 0.010),
       breathPhase: rand(0, Math.PI * 2),
-      blur: rand(6, 18),
+      blur: rand(2, 10),
     })
   }
 
@@ -124,34 +115,40 @@ export default function BokehBackground() {
       canvas.height = canvas.offsetHeight
       orbs = buildOrbs(canvas.width, canvas.height)
     }
-
     resize()
     window.addEventListener('resize', resize)
 
     const draw = (t: number) => {
       const { width: w, height: h } = canvas
 
-      // Warm dark base
-      ctx.clearRect(0, 0, w, h)
+      // Warm golden background — matches the Wix hero
       const bg = ctx.createLinearGradient(0, 0, w, h)
-      bg.addColorStop(0, '#1A0800')
-      bg.addColorStop(0.5, '#1F0D02')
-      bg.addColorStop(1, '#150600')
+      bg.addColorStop(0,   '#B8780A')
+      bg.addColorStop(0.35,'#C9920E')
+      bg.addColorStop(0.65,'#D9AE30')
+      bg.addColorStop(1,   '#F0DC90')
       ctx.fillStyle = bg
       ctx.fillRect(0, 0, w, h)
+
+      // Silky wave sheen across the top (like the Wix fabric texture)
+      const sheen = ctx.createLinearGradient(0, 0, w, h * 0.45)
+      sheen.addColorStop(0,   'rgba(255,240,160,0.28)')
+      sheen.addColorStop(0.5, 'rgba(255,220,100,0.10)')
+      sheen.addColorStop(1,   'rgba(255,220,100,0)')
+      ctx.fillStyle = sheen
+      ctx.fillRect(0, 0, w, h * 0.45)
 
       for (const orb of orbs) {
         const x = orb.baseX + Math.sin(t * orb.driftSpeedX + orb.phaseX) * orb.driftAmpX
         const y = orb.baseY + Math.sin(t * orb.driftSpeedY + orb.phaseY) * orb.driftAmpY
         const opacity = Math.max(0, orb.baseOpacity + Math.sin(t * orb.breathSpeed + orb.breathPhase) * orb.breathAmp)
 
-        const [r, g, b] = orb.color
         ctx.save()
         ctx.filter = `blur(${orb.blur}px)`
         const grad = ctx.createRadialGradient(x, y, 0, x, y, orb.radius)
-        grad.addColorStop(0,   `rgba(${r},${g},${b},${opacity})`)
-        grad.addColorStop(0.4, `rgba(${r},${g},${b},${opacity * 0.55})`)
-        grad.addColorStop(1,   `rgba(${r},${g},${b},0)`)
+        grad.addColorStop(0,   `rgba(${orb.r},${orb.g},${orb.b},${opacity})`)
+        grad.addColorStop(0.45,`rgba(${orb.r},${orb.g},${orb.b},${opacity * 0.5})`)
+        grad.addColorStop(1,   `rgba(${orb.r},${orb.g},${orb.b},0)`)
         ctx.beginPath()
         ctx.arc(x, y, orb.radius, 0, Math.PI * 2)
         ctx.fillStyle = grad
@@ -163,7 +160,6 @@ export default function BokehBackground() {
     }
 
     animId = requestAnimationFrame(draw)
-
     return () => {
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', resize)
