@@ -1,3 +1,4 @@
+import BokehBackground from '@/components/BokehBackground'
 import GoldParticles from '@/components/GoldParticles'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -6,8 +7,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0A0806]">
-        <GoldParticles count={60} />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#1A0800]">
+        <BokehBackground />
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-24 pb-16">
           <div>
             <p className="text-[#C9A84C] tracking-[0.3em] uppercase text-xs mb-6 font-light" style={{ fontFamily: 'var(--font-sans)' }}>
@@ -55,7 +56,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0806] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1A0800] to-transparent" />
       </section>
 
       {/* Captivating Fragrance */}
