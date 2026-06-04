@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// Simple subscriber log — replace with Mailchimp/Klaviyo/Resend integration when ready.
-// To connect Mailchimp: add MAILCHIMP_API_KEY + MAILCHIMP_LIST_ID to Vercel env vars
-// and use the Mailchimp Marketing API to add members.
-
 export async function POST(req: NextRequest) {
   const { email } = await req.json()
 
@@ -11,21 +7,39 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
   }
 
-  // Log for now (visible in Vercel function logs under your dashboard)
-  console.log('[Subscribe]', { email, at: new Date().toISOString() })
+  const apiKey = process.env.BREVO_API_KEY
+  const listId = process.env.BREVO_LIST_ID
 
-  // ── Mailchimp integration (uncomment when ready) ──────────────────
-  // const listId = process.env.MAILCHIMP_LIST_ID
-  // const apiKey = process.env.MAILCHIMP_API_KEY          // e.g. 'abc123-us1'
-  // const datacentre = apiKey?.split('-')[1]              // e.g. 'us1'
-  // await fetch(`https://${datacentre}.api.mailchimp.com/3.0/lists/${listId}/members`, {
-  //   method: 'POST',
-  //   headers: {
-  //     Authorization: `apikey ${apiKey}`,
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify({ email_address: email, status: 'subscribed' }),
-  // })
+  if (!apiKey || !listId) {
+    console.error('[Subscribe] Missing BREVO_API_KEY or BREVO_LIST_ID')
+    return NextResponse.json({ ok: true }) // Fail silently on frontend
+  }
 
+  try {
+    const res = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key': apiKey,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        listIds: [parseInt(listId, 10)],
+        updateEnabled: true, // won't error if email already exists
+      }),
+    })
+
+    if (!res.ok) {
+      const err = await res.json()
+      console.error('[Subscribe] Brevo error:', err)
+    } else {
+      console.log('[Subscribe] Added to Brevo list:', email)
+    }
+  } catch (err) {
+    console.error('[Subscribe] Network error:', err)
+  }
+
+  // Always return ok — don't expose internal errors to the visitor
   return NextResponse.json({ ok: true })
 }
