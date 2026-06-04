@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Perspectives',
     readTime: '5 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1614963048453-bd159b9b0049?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=1200&q=80',
     content: [
       {
         heading: 'Fragrance Has No Gender — Only Marketing Does',
@@ -171,7 +171,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Craft',
     readTime: '6 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1614963048453-bd159b9b0049?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1615400327023-a9e6caee2e5f?w=1200&q=80',
     content: [
       {
         heading: 'The Scale Problem in Modern Perfumery',
