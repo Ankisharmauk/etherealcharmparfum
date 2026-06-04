@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ShoppingBag, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { useCart } from '@/context/CartContext'
@@ -11,9 +12,20 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-white/5 bg-[#0A0806]/80 backdrop-blur-md">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-[#C9A84C] tracking-[0.25em] uppercase text-sm font-light">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-[#C9920E]/25 bg-[#7A4800]/95 backdrop-blur-md">
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/images/logo.jpg"
+            alt="Ethereal Charm"
+            width={52}
+            height={52}
+            className="rounded-full shrink-0"
+            style={{ objectFit: 'cover', boxShadow: '0 0 0 1.5px rgba(201,146,14,0.45)' }}
+          />
+          <span
+            className="hidden sm:block tracking-[0.22em] uppercase text-[#F5DFA0] font-light"
+            style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', letterSpacing: '0.22em' }}
+          >
             Ethereal Charm
           </span>
         </Link>
@@ -23,7 +35,8 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className="text-[#F5F0E8]/60 hover:text-[#C9A84C] tracking-widest uppercase text-xs transition-colors duration-300"
+              className="text-[#F5DFA0]/70 hover:text-[#F5DFA0] tracking-widest uppercase text-xs transition-colors duration-300"
+              style={{ fontFamily: 'var(--font-sans)' }}
             >
               {label}
             </Link>
@@ -33,20 +46,20 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <button
             onClick={openCart}
-            className="relative text-[#F5F0E8]/70 hover:text-[#C9A84C] transition-colors"
+            className="relative text-[#F5DFA0]/70 hover:text-[#F5DFA0] transition-colors"
             aria-label="Open cart"
           >
             <ShoppingBag size={20} strokeWidth={1.5} />
             {count > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#C9A84C] text-[#0A0806] text-[10px] font-bold flex items-center justify-center">
+              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#C9920E] text-white text-[10px] font-bold flex items-center justify-center">
                 {count}
               </span>
             )}
           </button>
 
           <button
-            className="md:hidden text-[#F5F0E8]/70 hover:text-[#C9A84C] transition-colors"
-            onClick={() => setMenuOpen((v) => !v)}
+            className="md:hidden text-[#F5DFA0]/70 hover:text-[#F5DFA0] transition-colors"
+            onClick={() => setMenuOpen(v => !v)}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -55,9 +68,9 @@ export default function Navbar() {
       </header>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0A0806] flex flex-col items-center justify-center gap-10 md:hidden">
+        <div className="fixed inset-0 z-40 bg-[#7A4800] flex flex-col items-center justify-center gap-10 md:hidden">
           <button
-            className="absolute top-5 right-6 text-[#F5F0E8]/60"
+            className="absolute top-5 right-6 text-[#F5DFA0]/60"
             onClick={() => setMenuOpen(false)}
           >
             <X size={24} />
@@ -67,7 +80,8 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="text-[#F5F0E8] tracking-[0.3em] uppercase text-2xl font-light hover:text-[#C9A84C] transition-colors"
+              className="text-[#F5DFA0] tracking-[0.3em] uppercase text-2xl font-light hover:text-[#E8C876] transition-colors"
+              style={{ fontFamily: 'var(--font-sans)' }}
             >
               {label}
             </Link>

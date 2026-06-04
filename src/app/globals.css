@@ -13,8 +13,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
-  color: var(--cream);
+  background: #FBF4E3;
+  color: #2C1A06;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

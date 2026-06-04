@@ -5,6 +5,7 @@ import { CartProvider } from '@/context/CartContext'
 import Navbar from '@/components/Navbar'
 import CartDrawer from '@/components/CartDrawer'
 import Footer from '@/components/Footer'
+import ContactChat from '@/components/ContactChat'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CartDrawer />
           <main className="flex-1">{children}</main>
           <Footer />
+          <ContactChat />
         </CartProvider>
       </body>
     </html>
