@@ -113,7 +113,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-6">
-            {[['Terms & Conditions', '/terms'], ['Privacy Policy', '/privacy'], ['Shipping & Returns', '/shipping']].map(([label, href]) => (
+            {[['Terms & Conditions', '/terms'], ['Privacy Policy', '/privacy'], ['Shipping & Returns', '/shipping'], ['Media', '/media']].map(([label, href]) => (
               <Link key={href} href={href}
                 className="text-[#F5DFA0]/50 text-xs hover:text-[#F5DFA0] transition-colors"
                 style={{ fontFamily: 'var(--font-sans)' }}>
