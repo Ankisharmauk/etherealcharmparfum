@@ -159,7 +159,7 @@ export default function ShippingPage() {
         <Section title="Damaged or Defective Items">
           <P>
             While we take every care in packaging your order, if your item arrives damaged or defective, please contact us within <strong style={{ color: CREAM }}>48 hours</strong> of delivery at{' '}
-            <a href="mailto:hello@theetherealcharm.com" style={{ color: GOLD }}>hello@theetherealcharm.com</a>.
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
           </P>
           <P>Please include:</P>
           <UL>
@@ -178,7 +178,7 @@ export default function ShippingPage() {
           </P>
           <P>
             If you believe your order is genuinely lost, contact us at{' '}
-            <a href="mailto:hello@theetherealcharm.com" style={{ color: GOLD }}>hello@theetherealcharm.com</a>{' '}
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>{' '}
             and we will investigate with the carrier. We will not reship or refund orders that are still within the carrier&apos;s estimated window.
           </P>
         </Section>
@@ -192,7 +192,7 @@ export default function ShippingPage() {
         <Section title="Contact Us">
           <P>
             For any questions about your order, shipping, or this policy, please reach out at{' '}
-            <a href="mailto:hello@theetherealcharm.com" style={{ color: GOLD }}>hello@theetherealcharm.com</a>.
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
             We aim to respond to all enquiries within one business day.
           </P>
         </Section>

@@ -91,7 +91,7 @@ export default function PrivacyPage() {
           </P>
           <P>
             If you have any questions about this Privacy Policy or how we handle your personal data, please contact us at{' '}
-            <a href="mailto:hello@theetherealcharm.com" style={{ color: GOLD }}>hello@theetherealcharm.com</a>.
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
           </P>
         </Section>
 
@@ -168,7 +168,7 @@ export default function PrivacyPage() {
           </UL>
           <P>
             To exercise any of these rights, email us at{' '}
-            <a href="mailto:hello@theetherealcharm.com" style={{ color: GOLD }}>hello@theetherealcharm.com</a>.
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
             We will respond within 30 days.
           </P>
         </Section>

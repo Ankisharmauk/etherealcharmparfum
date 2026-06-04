@@ -92,7 +92,7 @@ export default function TermsPage() {
           </P>
           <P>
             Ethereal Charm is a luxury fragrance brand based in London, United Kingdom. For enquiries, contact us at{' '}
-            <a href="mailto:hello@theetherealcharm.com" style={{ color: GOLD }}>hello@theetherealcharm.com</a>.
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
           </P>
         </Section>
 

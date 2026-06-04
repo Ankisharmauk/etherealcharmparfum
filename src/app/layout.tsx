@@ -92,7 +92,7 @@ const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    email: 'hello@theetherealcharm.com',
+    email: 'info@theetherealcharm.com',
   },
 }
 
