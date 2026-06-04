@@ -85,15 +85,29 @@ export default function AboutPage() {
       <section style={{ background: 'linear-gradient(180deg, #0D0804 0%, #160C04 60%, #0D0804 100%)', padding: '112px 0' }}>
         <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-          <div className="reveal-left relative order-2 md:order-1" style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
-            <Image
-              src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=800&q=80"
-              alt="Perfume crafting, London"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0" style={{ border: '1px solid rgba(201,146,14,0.22)', pointerEvents: 'none' }} />
-            <div className="absolute bottom-0 left-0 right-0" style={{ height: '40%', background: 'linear-gradient(to top, rgba(13,8,4,0.55), transparent)' }} />
+          <div
+            className="reveal-left relative order-2 md:order-1"
+            style={{
+              aspectRatio: '3/4',
+              overflow: 'hidden',
+              background: 'linear-gradient(160deg, #1C0E02 0%, #2A1500 55%, #130900 100%)',
+            }}
+          >
+            {/* Gold glow */}
+            <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 55% at 50% 60%, rgba(201,146,14,0.2), transparent)' }} />
+            {/* Bottle — lying/resting display */}
+            <div className="relative z-10 h-full flex items-center justify-center py-10 px-12">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/bottle.png"
+                  alt="Ethereal Charm Parfum — crafted in London"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            {/* Gold border */}
+            <div className="absolute inset-0 border border-[#C9920E]/22 pointer-events-none" />
           </div>
 
           <div className="order-1 md:order-2">

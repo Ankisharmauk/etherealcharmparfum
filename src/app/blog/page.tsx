@@ -1,38 +1,12 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { blogPosts } from './posts'
 
 export const metadata: Metadata = {
-  title: 'Stories & Insights — Ethereal Charm',
-  description: 'Explore guides, perspectives, and the craft behind Ethereal Charm — a luxury gender-neutral parfum made in London.',
+  title: 'Journal — Ethereal Charm',
+  description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm — a gender-neutral parfum made in London.',
 }
-
-const posts = [
-  {
-    slug: 'the-art-of-wearing-perfume',
-    category: 'Guide',
-    date: 'June 2026',
-    title: 'The Art of Wearing Perfume',
-    excerpt: 'Where you apply your fragrance changes everything. A guide to making your scent last from morning to midnight, and how to layer notes for maximum effect.',
-    image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&q=80',
-  },
-  {
-    slug: 'why-gender-neutral-fragrance-is-the-future',
-    category: 'Perspectives',
-    date: 'May 2026',
-    title: 'Why Gender-Neutral Fragrance Is the Future of Luxury',
-    excerpt: 'The best scents have never belonged to a gender. Here is why modern perfumery is finally catching up with what wearers have always known.',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=800&q=80',
-  },
-  {
-    slug: 'crafted-in-london',
-    category: 'Craft',
-    date: 'April 2026',
-    title: 'Crafted in London: What It Really Means',
-    excerpt: 'Not just a label. A commitment to sourcing, skill, and small-batch quality that mass production cannot replicate. Inside the making of Ethereal Charm.',
-    image: 'https://images.unsplash.com/photo-1614963048453-bd159b9b0049?w=800&q=80',
-  },
-]
 
 const GOLD = '#C9920E'
 const CREAM = '#F5DFA0'
@@ -56,8 +30,8 @@ export default function BlogPage() {
         <h1 className="font-light" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 64px)', color: CREAM }}>
           Stories &amp; Insights
         </h1>
-        <p className="mt-5 max-w-md mx-auto px-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: '22px', color: 'rgba(245,223,160,0.5)', textAlign: 'center' }}>
-          Guides, perspectives, and the craft behind the scent.
+        <p className="mt-5 max-w-md mx-auto px-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: '22px', color: 'rgba(245,223,160,0.5)' }}>
+          Fragrance guides, perspectives on luxury scent, and the craft behind the bottle.
         </p>
       </section>
 
@@ -65,7 +39,7 @@ export default function BlogPage() {
       <section style={{ padding: '80px 0 120px' }}>
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {posts.map((post) => (
+            {blogPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -93,12 +67,15 @@ export default function BlogPage() {
                   </span>
                 </div>
                 <div className="flex flex-col gap-3 p-6 flex-1">
-                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(245,223,160,0.35)' }}>{post.date}</span>
+                  <div className="flex items-center justify-between">
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(245,223,160,0.35)' }}>{post.date}</span>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(245,223,160,0.35)' }}>{post.readTime}</span>
+                  </div>
                   <h2 className="font-light" style={{ fontFamily: 'var(--font-display)', fontSize: '20px', color: CREAM, lineHeight: 1.35 }}>
                     {post.title}
                   </h2>
                   <p className="flex-1" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: '22px', color: 'rgba(245,223,160,0.52)', textAlign: 'justify' }}>
-                    {post.excerpt}
+                    {post.excerpt.slice(0, 120)}...
                   </p>
                   <span
                     className="inline-flex items-center gap-1.5 group-hover:gap-3 transition-all duration-300 mt-2"
@@ -109,16 +86,6 @@ export default function BlogPage() {
                 </div>
               </Link>
             ))}
-          </div>
-
-          {/* Coming soon note */}
-          <div
-            className="mt-16 text-center"
-            style={{ padding: '40px', border: '1px solid rgba(201,146,14,0.12)', background: 'rgba(201,146,14,0.03)' }}
-          >
-            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'rgba(245,223,160,0.35)', letterSpacing: '0.1em' }}>
-              More stories coming soon — fragrance guides, ingredient deep-dives, and the world of luxury scent.
-            </p>
           </div>
         </div>
       </section>

@@ -8,61 +8,100 @@ export const metadata: Metadata = {
   description: 'Shop the Ethereal Charm parfum collection. Gender-neutral luxury fragrance made in London.',
 }
 
+const GOLD = '#C9920E'
+const CREAM = '#F5DFA0'
+
 export default function ShopPage() {
   return (
     <>
       {/* Page header */}
-      <section className="pt-36 pb-16 bg-[#C8900A] text-center">
-        <p className="text-[#F5DFA0]/70 tracking-[0.3em] uppercase text-xs mb-4 font-light" style={{ fontFamily: 'var(--font-sans)' }}>
+      <section
+        style={{
+          background: 'radial-gradient(ellipse 130% 80% at 50% 0%, #2A1500 0%, #0D0804 70%)',
+          paddingTop: '144px',
+          paddingBottom: '72px',
+          textAlign: 'center',
+          borderBottom: '1px solid rgba(201,146,14,0.12)',
+        }}
+      >
+        <p className="tracking-[0.3em] uppercase font-light mb-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: GOLD }}>
           The Collection
         </p>
-        <h1 className="text-5xl md:text-6xl font-light text-white" style={{ fontFamily: 'var(--font-display)' }}>
+        <h1 className="font-light" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(42px, 6vw, 72px)', color: CREAM }}>
           Shop
         </h1>
       </section>
 
       {/* Product grid */}
-      <section className="py-20 bg-[#FBF4E3]">
+      <section style={{ background: '#0D0804', padding: '80px 0 120px' }}>
         <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((product) => (
             <Link
               key={product.id}
               href={`/shop/${product.slug}`}
-              className="group border border-[#C9920E]/20 hover:border-[#C9920E]/50 bg-[#FFFCF5] hover:bg-[#FFF8EE] transition-all duration-500 overflow-hidden"
+              className="group overflow-hidden transition-all duration-500"
+              style={{
+                background: 'rgba(201,146,14,0.04)',
+                border: '1px solid rgba(201,146,14,0.16)',
+              }}
             >
               {/* Image panel */}
-              <div className="relative h-72 flex items-center justify-center overflow-hidden bg-[#F5E8C8]">
+              <div
+                className="relative flex items-center justify-center overflow-hidden"
+                style={{
+                  height: '288px',
+                  background: 'linear-gradient(160deg, #1C0E02 0%, #2A1500 55%, #130900 100%)',
+                }}
+              >
+                {/* Gold glow */}
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,146,14,0.2), transparent)' }}
+                />
                 <div className="relative z-10 w-40 h-56">
-                  <Image src={product.image} alt={product.name} fill className="object-contain" />
+                  <Image src={product.image} alt={product.name} fill className="object-contain drop-shadow-2xl" />
                 </div>
                 {product.badge && (
-                  <span className="absolute top-4 right-4 z-20 text-[10px] tracking-widest uppercase text-[#C9920E] border border-[#C9920E]/40 px-3 py-1 bg-[#FBF4E3]/80" style={{ fontFamily: 'var(--font-sans)' }}>
+                  <span
+                    className="absolute top-4 right-4 z-20 text-[10px] tracking-widest uppercase"
+                    style={{ fontFamily: 'var(--font-sans)', color: GOLD, border: '1px solid rgba(201,146,14,0.4)', padding: '4px 12px', background: 'rgba(13,8,4,0.7)' }}
+                  >
                     {product.badge}
                   </span>
                 )}
+                {/* Hover overlay */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: 'rgba(201,146,14,0.06)' }}
+                />
               </div>
 
               {/* Info */}
-              <div className="p-8">
-                <p className="text-[#2C1A06]/35 text-xs tracking-widest uppercase mb-2" style={{ fontFamily: 'var(--font-sans)' }}>
+              <div className="p-8" style={{ borderTop: '1px solid rgba(201,146,14,0.1)' }}>
+                <p className="tracking-widest uppercase mb-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(245,223,160,0.38)' }}>
                   {product.subtitle}
                 </p>
-                <h2 className="text-2xl font-light text-[#2C1A06] mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+                <h2 className="font-light mb-3" style={{ fontFamily: 'var(--font-display)', fontSize: '26px', color: CREAM }}>
                   {product.name}
                 </h2>
-                <p className="text-[#2C1A06]/50 text-sm leading-relaxed mb-6" style={{ fontFamily: 'var(--font-sans)' }}>
+                <p className="leading-relaxed mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'rgba(245,223,160,0.5)', textAlign: 'justify' }}>
                   {product.description}
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-baseline gap-3">
-                    <span className="text-[#C9920E] text-xl" style={{ fontFamily: 'var(--font-display)' }}>
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '22px', color: GOLD }}>
                       ${product.price}
                     </span>
                     {product.comparePrice && (
-                      <span className="text-[#2C1A06]/25 text-sm line-through">${product.comparePrice}</span>
+                      <span style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'rgba(245,223,160,0.25)', textDecoration: 'line-through' }}>
+                        ${product.comparePrice}
+                      </span>
                     )}
                   </div>
-                  <span className="text-xs tracking-widest uppercase text-[#C9920E]/50 group-hover:text-[#C9920E] transition-colors" style={{ fontFamily: 'var(--font-sans)' }}>
+                  <span
+                    className="tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-300"
+                    style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: GOLD }}
+                  >
                     View →
                   </span>
                 </div>
