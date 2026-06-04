@@ -262,7 +262,7 @@ export default function AboutPage() {
           </h2>
 
           {sent ? (
-            <div className="text-center py-12 reveal">
+            <div className="text-center py-12">
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div style={{ height: '1px', width: 40, background: 'rgba(201,146,14,0.4)' }} />
                 <div style={{ width: 6, height: 6, borderRadius: '50%', background: GOLD }} />
