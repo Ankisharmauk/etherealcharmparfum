@@ -150,6 +150,9 @@ export default function TermsPage() {
             <Link href="/shipping" style={{ color: GOLD }}>Shipping &amp; Returns</Link>{' '}
             page for full details.
           </P>
+          <P>
+            Nothing in this policy excludes, restricts, or modifies any consumer guarantee, right, or remedy conferred by the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010) or any other applicable consumer protection legislation that cannot lawfully be excluded.
+          </P>
         </Section>
 
         <Section title="8. Intellectual Property">
@@ -177,7 +180,10 @@ export default function TermsPage() {
 
         <Section title="11. Governing Law">
           <P>
-            These Terms and Conditions are governed by and construed in accordance with the laws of England and Wales. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+            These Terms and Conditions are governed by and construed in accordance with the laws of Australia. Any disputes arising under these Terms shall be subject to the jurisdiction of the courts of Australia.
+          </P>
+          <P>
+            For customers located in Australia, these Terms are subject to the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010), which provides consumer guarantees that cannot be excluded by contract. ABN 77 564 307 579.
           </P>
         </Section>
 

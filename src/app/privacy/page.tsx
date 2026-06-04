@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — Ethereal Charm',
-  description: 'Privacy Policy for Ethereal Charm. Learn how we collect, use, and protect your personal data in accordance with UK GDPR.',
+  description: 'Privacy Policy for Ethereal Charm (ABN 77 564 307 579). How we collect, use, and protect your personal information under the Australian Privacy Act 1988.',
   robots: { index: true, follow: true },
 }
 
@@ -84,105 +84,126 @@ export default function PrivacyPage() {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 md:px-12 py-20">
 
-        <Section title="1. Who We Are">
+        <Section title="1. About This Policy">
           <P>
-            Ethereal Charm (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a luxury fragrance brand based in London, United Kingdom. We operate the website at{' '}
-            <a href="https://www.theetherealcharm.com" style={{ color: GOLD }}>www.theetherealcharm.com</a>.
+            Ethereal Charm (ABN 77 564 307 579) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and disclose personal information in accordance with the <strong style={{ color: CREAM }}>Australian Privacy Act 1988</strong> (Cth) and the Australian Privacy Principles (APPs).
           </P>
           <P>
-            If you have any questions about this Privacy Policy or how we handle your personal data, please contact us at{' '}
+            We operate the website at{' '}
+            <a href="https://www.theetherealcharm.com" style={{ color: GOLD }}>www.theetherealcharm.com</a>.
+            For any privacy-related enquiries, please contact us at{' '}
             <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
           </P>
         </Section>
 
-        <Section title="2. Data We Collect">
-          <P>We collect the following categories of personal data:</P>
+        <Section title="2. What Personal Information We Collect">
+          <P>We may collect the following types of personal information:</P>
           <UL>
-            <LI><strong style={{ color: CREAM }}>Identity data</strong> — your name, as provided during checkout.</LI>
-            <LI><strong style={{ color: CREAM }}>Contact data</strong> — your email address and delivery address.</LI>
-            <LI><strong style={{ color: CREAM }}>Transaction data</strong> — details of products purchased and payment confirmation. We do not store card details — all payment processing is handled by Stripe.</LI>
-            <LI><strong style={{ color: CREAM }}>Marketing data</strong> — your email address if you voluntarily subscribe to our mailing list.</LI>
-            <LI><strong style={{ color: CREAM }}>Technical data</strong> — IP address, browser type, device type, and pages visited, collected automatically via cookies and analytics tools.</LI>
-          </UL>
-        </Section>
-
-        <Section title="3. How We Use Your Data">
-          <P>We use your personal data for the following purposes:</P>
-          <UL>
-            <LI>To process and fulfil your orders, including sending order confirmations and shipping updates.</LI>
-            <LI>To send marketing emails if you have subscribed — you may unsubscribe at any time via the link in any email.</LI>
-            <LI>To improve our website and understand how visitors use it.</LI>
-            <LI>To comply with legal and regulatory obligations.</LI>
+            <LI><strong style={{ color: CREAM }}>Identity information</strong> — your name, as provided at checkout.</LI>
+            <LI><strong style={{ color: CREAM }}>Contact information</strong> — your email address and delivery address.</LI>
+            <LI><strong style={{ color: CREAM }}>Transaction information</strong> — details of products you purchase and order confirmation. We do not store payment card details — all card processing is handled by Stripe.</LI>
+            <LI><strong style={{ color: CREAM }}>Marketing preferences</strong> — your email address if you voluntarily subscribe to our mailing list.</LI>
+            <LI><strong style={{ color: CREAM }}>Technical information</strong> — IP address, browser type, device type, and pages visited, collected automatically via cookies and analytics tools.</LI>
           </UL>
           <P>
-            We will never sell your personal data to third parties or use it for any purpose beyond what is described above.
+            We only collect personal information that is reasonably necessary for our business functions. You may choose not to provide certain information, but this may limit our ability to process your order or respond to your enquiry.
           </P>
         </Section>
 
-        <Section title="4. Legal Basis for Processing">
-          <P>Under UK GDPR, we process your data on the following legal bases:</P>
+        <Section title="3. How We Collect Personal Information">
+          <P>We collect personal information:</P>
           <UL>
-            <LI><strong style={{ color: CREAM }}>Contract</strong> — processing your order and communicating about it.</LI>
-            <LI><strong style={{ color: CREAM }}>Consent</strong> — sending marketing emails (you can withdraw consent at any time).</LI>
-            <LI><strong style={{ color: CREAM }}>Legitimate interests</strong> — improving our website and preventing fraud.</LI>
+            <LI>Directly from you when you place an order, create an account, contact us, or subscribe to our mailing list.</LI>
+            <LI>Automatically through cookies and analytics when you browse our website.</LI>
+            <LI>From third-party payment processors (Stripe) in connection with your purchase.</LI>
           </UL>
         </Section>
 
-        <Section title="5. Third-Party Processors">
-          <P>We share your data only with trusted third-party service providers who process it on our behalf:</P>
+        <Section title="4. How We Use Your Personal Information">
+          <P>We use your personal information to:</P>
           <UL>
-            <LI><strong style={{ color: CREAM }}>Stripe</strong> — payment processing. Stripe is PCI-DSS compliant and does not share your card data with us.</LI>
+            <LI>Process and fulfil your orders, including sending order confirmations and shipping updates.</LI>
+            <LI>Send marketing communications if you have opted in — you may unsubscribe at any time.</LI>
+            <LI>Respond to your enquiries and provide customer support.</LI>
+            <LI>Improve our website and understand how visitors use it.</LI>
+            <LI>Comply with our legal obligations.</LI>
+          </UL>
+          <P>
+            We will not use or disclose your personal information for purposes other than those described in this policy without your consent, unless required or authorised by law.
+          </P>
+        </Section>
+
+        <Section title="5. Disclosure of Personal Information">
+          <P>We may disclose your personal information to the following third-party service providers who assist us in operating our business:</P>
+          <UL>
+            <LI><strong style={{ color: CREAM }}>Stripe</strong> — secure payment processing. Stripe does not share your card details with us and is PCI-DSS compliant.</LI>
             <LI><strong style={{ color: CREAM }}>Brevo (Sendinblue)</strong> — email marketing and transactional emails.</LI>
             <LI><strong style={{ color: CREAM }}>Vercel</strong> — website hosting and infrastructure.</LI>
           </UL>
-          <P>All processors are contractually obligated to protect your data and use it only as instructed by us.</P>
+          <P>
+            These providers are authorised to use your information only as necessary to provide services to us. We do not sell your personal information to any third party.
+          </P>
+          <P>
+            Some of our service providers are located outside Australia (including the United States and Europe). By using our website and providing your information, you consent to your information being stored and processed in these countries, which may have different privacy protections than Australia.
+          </P>
         </Section>
 
         <Section title="6. Cookies">
           <P>
-            Our website uses cookies to function correctly and to help us understand how visitors use the site. Cookies are small text files stored on your device. We use:
+            Our website uses cookies — small text files stored on your device — to provide a functional and improved experience. We use:
           </P>
           <UL>
-            <LI><strong style={{ color: CREAM }}>Essential cookies</strong> — required for the site to work (e.g., shopping cart session).</LI>
-            <LI><strong style={{ color: CREAM }}>Analytics cookies</strong> — to understand traffic patterns and improve the site. Data is anonymised where possible.</LI>
+            <LI><strong style={{ color: CREAM }}>Essential cookies</strong> — required for the site to function correctly (e.g., shopping cart).</LI>
+            <LI><strong style={{ color: CREAM }}>Analytics cookies</strong> — to understand how visitors use the site and improve it. Data is anonymised where possible.</LI>
           </UL>
           <P>You can disable cookies via your browser settings, though this may affect site functionality.</P>
         </Section>
 
-        <Section title="7. Data Retention">
+        <Section title="7. Data Security">
           <P>
-            We retain your personal data for as long as necessary to fulfil the purposes described above. Order data is retained for 7 years to comply with UK tax and accounting regulations. Marketing data is retained until you unsubscribe.
+            We take reasonable steps to protect your personal information from misuse, interference, loss, and unauthorised access, modification, or disclosure. All transactions are encrypted via SSL. Payment data is handled exclusively by Stripe and never stored on our servers.
+          </P>
+          <P>
+            While we take all reasonable precautions, no data transmission over the internet can be guaranteed as fully secure. You provide your information at your own risk.
           </P>
         </Section>
 
-        <Section title="8. Your Rights">
-          <P>Under UK GDPR, you have the following rights regarding your personal data:</P>
+        <Section title="8. Data Retention">
+          <P>
+            We retain your personal information for as long as necessary to fulfil the purposes described in this policy, or as required by law. Order and transaction data is retained for 7 years to comply with applicable tax and accounting obligations. Marketing data is retained until you unsubscribe or request deletion.
+          </P>
+        </Section>
+
+        <Section title="9. Your Rights">
+          <P>Under the Australian Privacy Act 1988, you have the right to:</P>
           <UL>
-            <LI><strong style={{ color: CREAM }}>Access</strong> — request a copy of the data we hold about you.</LI>
-            <LI><strong style={{ color: CREAM }}>Rectification</strong> — request correction of inaccurate data.</LI>
-            <LI><strong style={{ color: CREAM }}>Erasure</strong> — request deletion of your data (&quot;right to be forgotten&quot;), subject to legal obligations.</LI>
-            <LI><strong style={{ color: CREAM }}>Restriction</strong> — request that we limit how we use your data.</LI>
-            <LI><strong style={{ color: CREAM }}>Portability</strong> — request your data in a structured, machine-readable format.</LI>
-            <LI><strong style={{ color: CREAM }}>Objection</strong> — object to processing based on legitimate interests.</LI>
-            <LI><strong style={{ color: CREAM }}>Withdraw consent</strong> — unsubscribe from marketing at any time.</LI>
+            <LI><strong style={{ color: CREAM }}>Access</strong> — request access to the personal information we hold about you.</LI>
+            <LI><strong style={{ color: CREAM }}>Correction</strong> — request that we correct any personal information that is inaccurate, out of date, incomplete, or misleading.</LI>
+            <LI><strong style={{ color: CREAM }}>Complaint</strong> — make a complaint if you believe we have breached the Australian Privacy Principles.</LI>
           </UL>
           <P>
-            To exercise any of these rights, email us at{' '}
+            To make a request or enquiry about your personal information, contact us at{' '}
             <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>.
-            We will respond within 30 days.
+            We will respond within a reasonable time (generally within 30 days).
           </P>
         </Section>
 
-        <Section title="9. Complaints">
+        <Section title="10. Privacy Complaints">
           <P>
-            If you believe we have handled your data incorrectly, you have the right to lodge a complaint with the UK Information Commissioner&apos;s Office (ICO) at{' '}
-            <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" style={{ color: GOLD }}>ico.org.uk</a>.
+            If you believe we have not handled your personal information in accordance with the Australian Privacy Principles, please contact us first at{' '}
+            <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>{' '}
+            so we can attempt to resolve the matter.
+          </P>
+          <P>
+            If you are not satisfied with our response, you may lodge a complaint with the{' '}
+            <strong style={{ color: CREAM }}>Office of the Australian Information Commissioner (OAIC)</strong> at{' '}
+            <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" style={{ color: GOLD }}>oaic.gov.au</a>.
           </P>
         </Section>
 
-        <Section title="10. Changes to This Policy">
+        <Section title="11. Changes to This Policy">
           <P>
-            We may update this Privacy Policy from time to time. Any material changes will be posted on this page with an updated date. We encourage you to review this page periodically.
+            We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this page periodically to stay informed about how we protect your information.
           </P>
         </Section>
 

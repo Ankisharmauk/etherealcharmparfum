@@ -85,6 +85,7 @@ const organizationSchema = {
   logo: `${BASE_URL}/images/bottle.png`,
   description: 'A luxury gender-neutral parfum crafted in small batches in London.',
   foundingLocation: { '@type': 'Place', name: 'London, United Kingdom' },
+  taxID: '77 564 307 579',
   sameAs: [
     'https://www.instagram.com/etherealcharmofficial',
     'https://www.tiktok.com/@etherealcharmperfume',

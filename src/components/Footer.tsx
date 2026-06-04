@@ -104,9 +104,14 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#C9920E]/20 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#F5DFA0]/50 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>
-            © {new Date().getFullYear()} Ethereal Charm. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p className="text-[#F5DFA0]/50 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>
+              © {new Date().getFullYear()} Ethereal Charm. All rights reserved.
+            </p>
+            <p className="text-[#F5DFA0]/30 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>
+              ABN 77 564 307 579
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             {[['Terms & Conditions', '/terms'], ['Privacy Policy', '/privacy'], ['Shipping & Returns', '/shipping']].map(([label, href]) => (
               <Link key={href} href={href}
