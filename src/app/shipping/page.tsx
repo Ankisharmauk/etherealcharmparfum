@@ -171,9 +171,9 @@ export default function ShippingPage() {
           <P>
             By placing an order, you acknowledge and agree that you have read and understood our no-refund policy.
           </P>
-          <P style={{ color: 'rgba(245,223,160,0.45)', fontSize: '13px' }}>
+          <p className="mb-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: '26px', color: 'rgba(245,223,160,0.45)' }}>
             Nothing in this policy excludes, restricts, or modifies any rights or remedies you may have under the Australian Consumer Law or any other applicable consumer protection legislation that cannot be excluded by agreement.
-          </P>
+          </p>
         </Section>
 
         <Section title="Damaged or Defective Items">
