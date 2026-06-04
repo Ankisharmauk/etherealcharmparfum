@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               {[
                 'Ethereal Charm was born not in a laboratory, but from a feeling. The unmistakable warmth of walking through a London market on a cold morning, the silk of a well-worn leather book, the quiet confidence of a room that smells extraordinary.',
-                'Our founder, a New Zealander who found her creative home in London, spent years searching for a fragrance that felt both timeless and alive. When she could not find it, she made it herself, sourcing botanicals from across the British Isles and blending them with old-world technique.',
+                'Our founder, a New Zealander who found her creative home in London, spent years searching for a fragrance that felt both timeless and alive. When she could not find it, she made it herself. The first bottle was made on a Mother\'s Day in London — a fitting beginning for something born out of love.',
                 'Every bottle is handcrafted in small batches in London. No shortcuts. No mass production. The formula is a high-concentration parfum, more oil, less filler, so it lasts on the skin for hours without re-application.',
                 'Ethereal Charm is designed to be worn by anyone who refuses to be ordinary. It does not ask what gender you are. It only asks how you want to feel.',
               ].map((para, i) => (
@@ -211,7 +211,7 @@ export default function AboutPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { num: '01', title: 'Crafted in London', body: 'Every drop is made in small batches in London using locally sourced, premium botanicals. Handcrafted with care and never mass-produced.', delay: '0s' },
+              { num: '01', title: 'Crafted in London', body: 'Every drop is made in small batches in London using premium, carefully chosen ingredients. Handcrafted with care and never mass-produced.', delay: '0s' },
               { num: '02', title: 'Gender-Neutral', body: 'Fragrance has no gender. Ethereal Charm is designed for anyone who wants to wear something truly beautiful and completely their own.', delay: '0.12s' },
               { num: '03', title: 'Long-Lasting', body: 'Our high-concentration parfum formula ensures 8 to 12 hours of presence on the skin. One application. All day.', delay: '0.24s' },
             ].map(({ num, title, body, delay }) => (
