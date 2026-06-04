@@ -86,8 +86,8 @@ const organizationSchema = {
   description: 'A luxury gender-neutral parfum crafted in small batches in London.',
   foundingLocation: { '@type': 'Place', name: 'London, United Kingdom' },
   sameAs: [
-    'https://instagram.com/etherealcharmparfum',
-    'https://tiktok.com/@etherealcharmparfum',
+    'https://www.instagram.com/etherealcharmofficial',
+    'https://www.tiktok.com/@etherealcharmperfume',
   ],
   contactPoint: {
     '@type': 'ContactPoint',

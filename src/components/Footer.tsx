@@ -51,11 +51,11 @@ export default function Footer() {
               A luxurious, gender-neutral parfum. Crafted in London.
             </p>
             <div className="flex items-center gap-4 mt-6">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/etherealcharmofficial" target="_blank" rel="noopener noreferrer"
                 className="text-[#F5DFA0]/60 hover:text-[#F5DFA0] transition-colors">
                 <InstagramIcon />
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.tiktok.com/@etherealcharmperfume" target="_blank" rel="noopener noreferrer"
                 className="text-[#F5DFA0]/60 hover:text-[#F5DFA0] transition-colors">
                 <TikTokIcon />
               </a>
