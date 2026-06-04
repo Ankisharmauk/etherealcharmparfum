@@ -1,6 +1,19 @@
+import type { Metadata } from 'next'
 import GoldParticles from '@/components/GoldParticles'
 import Link from 'next/link'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
+  description: 'Ethereal Charm is a high-concentration gender-neutral parfum crafted in small batches in London. Long-lasting, sophisticated, and unlike anything mass-produced. Shop 10ml and 25ml.',
+  alternates: { canonical: 'https://www.theetherealcharm.com' },
+  openGraph: {
+    title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
+    description: 'A high-concentration gender-neutral parfum crafted in small batches in London. Long-lasting, sophisticated, unmistakable.',
+    url: 'https://www.theetherealcharm.com',
+    type: 'website',
+  },
+}
 
 export default function HomePage() {
   return (

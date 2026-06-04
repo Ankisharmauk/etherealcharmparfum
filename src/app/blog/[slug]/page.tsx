@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   return blogPosts.map(p => ({ slug: p.slug }))
 }
 
-const BASE_URL = 'https://www.etherealcharmparfum.com'
+const BASE_URL = 'https://www.theetherealcharm.com'
 const GOLD = '#C9920E'
 const CREAM = '#F5DFA0'
 

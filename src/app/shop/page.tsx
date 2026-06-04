@@ -3,9 +3,25 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://www.theetherealcharm.com'
+
 export const metadata: Metadata = {
-  title: 'Shop — Ethereal Charm',
-  description: 'Shop the Ethereal Charm parfum collection. Gender-neutral luxury fragrance made in London.',
+  title: 'Shop — Luxury Parfum Collection',
+  description: 'Shop the Ethereal Charm parfum collection. Choose from the 10ml Mini or the 25ml signature bottle. Gender-neutral, long-lasting, crafted in London.',
+  alternates: { canonical: `${BASE_URL}/shop` },
+  openGraph: {
+    title: 'Shop Ethereal Charm — Luxury Parfum Collection',
+    description: 'Choose from the 10ml Mini or the 25ml signature bottle. Gender-neutral, long-lasting, crafted in London.',
+    url: `${BASE_URL}/shop`,
+    type: 'website',
+    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum Collection' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shop Ethereal Charm — Luxury Parfum Collection',
+    description: 'Gender-neutral, long-lasting parfum crafted in London. 10ml and 25ml available.',
+    images: ['/images/bottle.png'],
+  },
 }
 
 const GOLD = '#C9920E'

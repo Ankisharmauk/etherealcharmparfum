@@ -1,0 +1,50 @@
+import type { MetadataRoute } from 'next'
+import { products } from '@/data/products'
+import { blogPosts } from '@/app/blog/posts'
+
+const BASE_URL = 'https://www.theetherealcharm.com'
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: BASE_URL,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/shop`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+  ]
+
+  const productPages: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${BASE_URL}/shop/${product.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...productPages, ...blogPages]
+}

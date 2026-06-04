@@ -3,9 +3,25 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { blogPosts } from './posts'
 
+const BASE_URL = 'https://www.theetherealcharm.com'
+
 export const metadata: Metadata = {
-  title: 'Journal — Ethereal Charm',
-  description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm — a gender-neutral parfum made in London.',
+  title: 'Journal — Fragrance Guides & Perspectives',
+  description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm — a gender-neutral parfum made in London. Learn about parfum concentration, gender-neutral fragrance, and artisan perfumery.',
+  alternates: { canonical: `${BASE_URL}/blog` },
+  openGraph: {
+    title: 'Ethereal Charm Journal — Fragrance Guides & Perspectives',
+    description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm — a gender-neutral parfum made in London.',
+    url: `${BASE_URL}/blog`,
+    type: 'website',
+    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Journal' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ethereal Charm Journal — Fragrance Guides & Perspectives',
+    description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm.',
+    images: ['/images/bottle.png'],
+  },
 }
 
 const GOLD = '#C9920E'
