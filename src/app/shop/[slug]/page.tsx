@@ -95,27 +95,17 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               {product.longDescription}
             </p>
 
-            {/* Scent profile */}
+            {/* Scent hint */}
             <div
-              className="mb-10 space-y-4 p-6"
-              style={{ background: 'rgba(201,146,14,0.04)', border: '1px solid rgba(201,146,14,0.18)' }}
+              className="mb-10 p-6"
+              style={{ background: 'rgba(201,146,14,0.04)', border: '1px solid rgba(201,146,14,0.18)', borderLeft: '2px solid rgba(201,146,14,0.5)' }}
             >
               <p className="tracking-widest uppercase mb-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', color: 'rgba(245,223,160,0.38)' }}>
-                Scent Profile
+                The Scent
               </p>
-              {product.notes.map(({ type, items }) => (
-                <div key={type} className="flex gap-4">
-                  <span
-                    className="uppercase tracking-widest w-16 shrink-0 pt-0.5 capitalize"
-                    style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(201,146,14,0.7)' }}
-                  >
-                    {type}
-                  </span>
-                  <span style={{ fontFamily: 'var(--font-display)', fontSize: '14px', color: 'rgba(245,223,160,0.65)' }}>
-                    {items.join(' · ')}
-                  </span>
-                </div>
-              ))}
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '16px', color: CREAM, fontWeight: 300, lineHeight: 1.7, fontStyle: 'italic' }}>
+                &ldquo;Fresh and bright at first touch — a whisper of citrus that opens the senses. Beneath it, the warmth of oud: rare, distinctive, unmistakable. The rest is ours to keep.&rdquo;
+              </p>
             </div>
 
             {/* Details */}
