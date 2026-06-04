@@ -222,53 +222,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── BLOG TEASER ───────────────────────────────────────────── */}
-      <section style={{ background: '#0A0703', padding: '100px 0' }}>
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="reveal flex items-end justify-between mb-12">
-            <div>
-              <p className="tracking-[0.35em] uppercase font-light mb-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: GOLD }}>
-                From the Edit
-              </p>
-              <h2 className="font-light" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(26px, 3vw, 40px)', color: CREAM }}>
-                Stories &amp; Insights
-              </h2>
-            </div>
-            <Link
-              href="/blog"
-              className="hidden md:inline-flex items-center gap-2 hover:gap-3 transition-all duration-300"
-              style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD }}
-            >
-              View All →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { href: '/blog/the-art-of-wearing-perfume', cat: 'Guide', title: 'The Art of Wearing Perfume', img: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&q=80', delay: '0s' },
-              { href: '/blog/why-gender-neutral-fragrance-is-the-future', cat: 'Perspectives', title: 'Why Gender-Neutral Fragrance Is the Future', img: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80', delay: '0.1s' },
-              { href: '/blog/crafted-in-london', cat: 'Craft', title: 'Crafted in London: What It Really Means', img: 'https://images.unsplash.com/photo-1614963048453-bd159b9b0049?w=600&q=80', delay: '0.2s' },
-            ].map(post => (
-              <Link
-                key={post.href}
-                href={post.href}
-                className="reveal group flex flex-col overflow-hidden"
-                style={{ background: 'rgba(201,146,14,0.04)', border: '1px solid rgba(201,146,14,0.13)', transitionDelay: post.delay }}
-              >
-                <div className="relative overflow-hidden" style={{ height: 180 }}>
-                  <Image src={post.img} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
-                  <div className="absolute inset-0" style={{ background: 'rgba(13,8,4,0.2)' }} />
-                </div>
-                <div className="p-5 flex flex-col gap-3">
-                  <span className="tracking-widest uppercase" style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', color: GOLD }}>{post.cat}</span>
-                  <h3 className="font-light" style={{ fontFamily: 'var(--font-display)', fontSize: '17px', color: CREAM, lineHeight: 1.35 }}>{post.title}</h3>
-                  <span className="inline-flex items-center gap-1 group-hover:gap-2 transition-all" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD }}>Read →</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CONTACT ───────────────────────────────────────────────── */}
       <section style={{ padding: '112px 0', background: DARK }}>
         <div className="max-w-xl mx-auto px-6 md:px-12">
