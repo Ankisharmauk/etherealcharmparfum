@@ -11,6 +11,7 @@ const CREAM = '#F5DFA0'
 export default function AboutPage() {
   const [formData, setFormData] = useState({ first: '', last: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   // Scroll-reveal: attach observer once on mount
   useEffect(() => {
@@ -22,8 +23,22 @@ export default function AboutPage() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setSending(true)
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.first,
+          lastName: formData.last,
+          email: formData.email,
+          message: formData.message,
+        }),
+      })
+    } catch { /* fail silently — visitor still sees confirmation */ }
+    setSending(false)
     setSent(true)
   }
 
@@ -298,12 +313,13 @@ export default function AboutPage() {
               </div>
               <button
                 type="submit"
-                className="w-full py-4 transition-all duration-300"
+                disabled={sending}
+                className="w-full py-4 transition-all duration-300 disabled:opacity-50"
                 style={{ background: 'rgba(201,146,14,0.08)', border: '1px solid rgba(201,146,14,0.4)', color: GOLD, fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase' }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,146,14,0.18)'; e.currentTarget.style.borderColor = 'rgba(201,146,14,0.7)' }}
+                onMouseEnter={e => { if (!sending) { e.currentTarget.style.background = 'rgba(201,146,14,0.18)'; e.currentTarget.style.borderColor = 'rgba(201,146,14,0.7)' } }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'rgba(201,146,14,0.08)'; e.currentTarget.style.borderColor = 'rgba(201,146,14,0.4)' }}
               >
-                Send Message
+                {sending ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           )}
