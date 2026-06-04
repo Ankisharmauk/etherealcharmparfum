@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Shipping & Returns — Ethereal Charm',
-  description: 'Shipping information and returns policy for Ethereal Charm. All sales are final — no refunds or exchanges.',
+  description: 'Shipping information and returns policy for Ethereal Charm. Australian and international delivery. All sales are final — no refunds or exchanges.',
   robots: { index: true, follow: true },
 }
 
@@ -101,41 +101,58 @@ export default function ShippingPage() {
 
         <Section title="Order Processing">
           <P>
-            All orders are processed within <strong style={{ color: CREAM }}>1–3 business days</strong> of payment confirmation. Orders placed on weekends or UK public holidays will be processed on the next business day.
+            All orders are processed within <strong style={{ color: CREAM }}>1–3 business days</strong> of payment confirmation. Orders placed on weekends or Australian public holidays will be processed on the next business day.
           </P>
           <P>
             Once your order has been dispatched, you will receive a confirmation email with tracking information where available.
           </P>
         </Section>
 
-        <Section title="UK Shipping">
+        <Section title="Australia Shipping">
           <InfoBox>
             <p style={{ fontFamily: 'var(--font-display)', fontSize: '17px', color: CREAM, fontWeight: 300, marginBottom: '6px' }}>
-              Standard Delivery — United Kingdom
+              Standard Delivery — Australia
             </p>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'rgba(245,223,160,0.6)' }}>
-              Estimated delivery: <strong style={{ color: CREAM }}>3–5 business days</strong> after dispatch.
+              Estimated delivery: <strong style={{ color: CREAM }}>3–7 business days</strong> after dispatch, depending on your location.
             </p>
           </InfoBox>
           <P>
-            All UK orders are sent via Royal Mail or an equivalent tracked courier. Delivery estimates are provided by the carrier and are not guaranteed. Ethereal Charm is not liable for delays caused by the carrier or circumstances beyond our control.
+            All Australian orders are dispatched via Australia Post or an equivalent tracked courier service. Metro areas typically receive orders within 3–5 business days; regional and remote areas may take up to 7 business days.
+          </P>
+          <P>
+            Delivery estimates are provided by the carrier and are not guaranteed. Ethereal Charm is not liable for delays caused by the carrier, weather events, or circumstances beyond our control.
+          </P>
+        </Section>
+
+        <Section title="New Zealand Shipping">
+          <InfoBox>
+            <p style={{ fontFamily: 'var(--font-display)', fontSize: '17px', color: CREAM, fontWeight: 300, marginBottom: '6px' }}>
+              New Zealand Delivery
+            </p>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'rgba(245,223,160,0.6)' }}>
+              Estimated delivery: <strong style={{ color: CREAM }}>5–10 business days</strong> after dispatch.
+            </p>
+          </InfoBox>
+          <P>
+            New Zealand orders are sent via tracked international post. Delivery times may vary depending on NZ Customs processing. Any applicable customs duties or import fees are the sole responsibility of the customer.
           </P>
         </Section>
 
         <Section title="International Shipping">
           <InfoBox>
             <p style={{ fontFamily: 'var(--font-display)', fontSize: '17px', color: CREAM, fontWeight: 300, marginBottom: '6px' }}>
-              International Delivery
+              Rest of World
             </p>
             <p style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', color: 'rgba(245,223,160,0.6)' }}>
-              Estimated delivery: <strong style={{ color: CREAM }}>7–14 business days</strong> after dispatch, depending on destination.
+              Estimated delivery: <strong style={{ color: CREAM }}>7–21 business days</strong> after dispatch, depending on destination.
             </p>
           </InfoBox>
           <P>
-            International orders may be subject to customs duties, import taxes, or fees imposed by the destination country. These charges are the sole responsibility of the customer. Ethereal Charm has no control over these charges and cannot predict or reimburse them.
+            International orders may be subject to customs duties, import taxes, or fees imposed by the destination country. These charges are entirely the responsibility of the customer. Ethereal Charm has no control over these charges and cannot predict or reimburse them.
           </P>
           <P>
-            Please note that fragrance products are classified as hazardous goods under international shipping regulations. Certain destinations may not accept fragrance shipments by air. We will contact you if we are unable to fulfil an international order to your destination.
+            Please note that fragrance products are classified as hazardous goods under international air freight regulations. Certain destinations may restrict fragrance shipments. We will contact you if we are unable to fulfil a delivery to your location.
           </P>
         </Section>
 
@@ -177,18 +194,18 @@ export default function ShippingPage() {
 
         <Section title="Lost or Missing Orders">
           <P>
-            If your order has not arrived within the estimated delivery window, please first check your tracking information. If tracking shows delivery but you have not received your parcel, please check with neighbours and any safe places that may have been used.
+            If your order has not arrived within the estimated delivery window, please first check your tracking information via Australia Post or the relevant carrier. If tracking shows delivery but you have not received your parcel, please check with neighbours and any safe drop locations that may have been used.
           </P>
           <P>
             If you believe your order is genuinely lost, contact us at{' '}
             <a href="mailto:info@theetherealcharm.com" style={{ color: GOLD }}>info@theetherealcharm.com</a>{' '}
-            and we will investigate with the carrier. We will not reship or refund orders that are still within the carrier&apos;s estimated window.
+            and we will investigate with the carrier. We will not reship or refund orders that are still within the carrier&apos;s estimated delivery window.
           </P>
         </Section>
 
         <Section title="Incorrect Address">
           <P>
-            Please ensure your delivery address is entered correctly at checkout. Ethereal Charm is not responsible for orders dispatched to an incorrect address provided by the customer. If you notice an error in your address immediately after placing an order, contact us as soon as possible — we may be able to amend it before dispatch, but this cannot be guaranteed.
+            Please ensure your delivery address is entered correctly at checkout. Ethereal Charm is not responsible for orders dispatched to an incorrect address provided by the customer. If you notice an error immediately after placing your order, contact us as soon as possible — we may be able to amend it before dispatch, but this cannot be guaranteed.
           </P>
         </Section>
 

@@ -108,7 +108,7 @@ export default function Footer() {
             <p className="text-[#F5DFA0]/50 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>
               © {new Date().getFullYear()} Ethereal Charm. All rights reserved.
             </p>
-            <p className="text-[#F5DFA0]/30 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>
+            <p className="text-[#F5DFA0]/50 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>
               ABN 77 564 307 579
             </p>
           </div>
