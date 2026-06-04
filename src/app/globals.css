@@ -25,3 +25,55 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: #C9A84C80; }
 
 ::selection { background: #C9A84C30; color: #E8C876; }
+
+/* ── Scroll-reveal animations ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ── Gold silk shimmer ────────────────────────────────────── */
+@keyframes gold-sweep {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.gold-shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.gold-shimmer-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(201,146,14,0.045) 40%,
+    rgba(232,200,118,0.07) 50%,
+    rgba(201,146,14,0.045) 60%,
+    transparent 100%
+  );
+  animation: gold-sweep 9s ease-in-out infinite;
+}

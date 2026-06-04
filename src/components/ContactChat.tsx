@@ -50,8 +50,9 @@ export default function ContactChat() {
         aria-label="Open contact form"
         className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-5 h-14 rounded-full text-white text-sm font-light tracking-wide transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
         style={{
-          backgroundColor: '#B9B89C',
-          boxShadow: '0 0 8px rgba(182,180,180,0.55)',
+          backgroundColor: '#6B3600',
+          border: '1px solid rgba(201,146,14,0.5)',
+          boxShadow: '0 4px 20px rgba(107,54,0,0.5), 0 0 0 1px rgba(201,146,14,0.15)',
           fontFamily: 'var(--font-sans)',
         }}
       >
@@ -70,7 +71,7 @@ export default function ContactChat() {
             {/* Header */}
             <div
               className="flex items-center justify-between px-5 py-4 border-b border-white/5"
-              style={{ backgroundColor: '#B9B89C' }}
+              style={{ backgroundColor: '#6B3600', borderBottom: '1px solid rgba(201,146,14,0.2)' }}
             >
               <div>
                 <p

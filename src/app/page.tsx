@@ -39,8 +39,8 @@ export default function HomePage() {
               The Essence of<br />
               Ethereal Charm
             </h1>
-            <p className="text-[#3D2810]/65 text-base leading-relaxed mb-10 max-w-sm" style={{ fontFamily: 'var(--font-sans)' }}>
-              Ethereal Charm introduces its newest fragrance, a quintessential, long-lasting gender-neutral perfume that awakens the mind and thrills the senses. Experience the aliveness of transformation with this luxurious, modern scent.
+            <p className="text-[#3D2810]/70 text-base leading-relaxed mb-10 max-w-sm" style={{ fontFamily: 'var(--font-sans)', textAlign: 'justify' }}>
+              Ethereal Charm is a refined gender-neutral parfum crafted to leave a lasting impression through depth, warmth, and understated elegance. Blending modern sophistication with timeless character, the fragrance is designed for those drawn to quiet luxury and distinctive presence.
             </p>
             <div className="flex items-center gap-6">
               <Link
@@ -79,8 +79,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&q=80"
-              alt="Applying perfume"
+              src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&q=80"
+              alt="Luxury perfume with rose petals"
               fill
               className="object-cover"
             />
@@ -145,6 +145,119 @@ export default function HomePage() {
           <p className="text-white/60 leading-relaxed max-w-2xl mx-auto text-sm" style={{ fontFamily: 'var(--font-sans)' }}>
             At Ethereal Charm, we prioritise the art of fragrance-making to deliver exceptional experiences. Our commitment lies in creating timeless and evocative scents that resonate with individuality and sophistication.
           </p>
+        </div>
+      </section>
+
+      {/* Blog — Stories & Insights */}
+      <section className="py-24 bg-[#0D0804]">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="flex items-end justify-between mb-12">
+            <div>
+              <p className="text-[#C9920E] tracking-[0.3em] uppercase text-xs mb-3 font-light" style={{ fontFamily: 'var(--font-sans)' }}>
+                From the Edit
+              </p>
+              <h2 className="text-3xl md:text-4xl font-light text-[#F5DFA0]" style={{ fontFamily: 'var(--font-display)' }}>
+                Stories &amp; Insights
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="hidden md:inline-flex items-center gap-2 text-[#C9920E] text-xs tracking-[0.15em] uppercase hover:gap-3 transition-all duration-300"
+              style={{ fontFamily: 'var(--font-sans)' }}
+            >
+              View All <span>→</span>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                href: '/blog/the-art-of-wearing-perfume',
+                category: 'Guide',
+                title: 'The Art of Wearing Perfume',
+                excerpt: 'Where you apply your fragrance changes everything. A guide to making your scent last from morning to midnight.',
+                date: 'June 2026',
+                image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=600&q=80',
+              },
+              {
+                href: '/blog/why-gender-neutral-fragrance-is-the-future',
+                category: 'Perspectives',
+                title: 'Why Gender-Neutral Fragrance Is the Future',
+                excerpt: 'The best scents have never belonged to a gender. Here is why modern perfumery is finally catching up.',
+                date: 'May 2026',
+                image: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80',
+              },
+              {
+                href: '/blog/crafted-in-london',
+                category: 'Craft',
+                title: 'Crafted in London: What It Really Means',
+                excerpt: 'Not just a label. A commitment to sourcing, skill, and small-batch quality that mass production cannot replicate.',
+                date: 'April 2026',
+                image: 'https://images.unsplash.com/photo-1614963048453-bd159b9b0049?w=600&q=80',
+              },
+            ].map((post) => (
+              <Link
+                key={post.href}
+                href={post.href}
+                className="group flex flex-col overflow-hidden"
+                style={{
+                  background: 'rgba(201,146,14,0.04)',
+                  border: '1px solid rgba(201,146,14,0.14)',
+                  transition: 'border-color 0.3s ease',
+                }}
+              >
+                <div className="relative overflow-hidden" style={{ height: 200 }}>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0" style={{ background: 'rgba(13,8,4,0.25)' }} />
+                </div>
+                <div className="flex flex-col gap-3 p-5 flex-1">
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="tracking-widest uppercase"
+                      style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', color: '#C9920E' }}
+                    >
+                      {post.category}
+                    </span>
+                    <span style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(245,223,160,0.35)' }}>
+                      {post.date}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-light leading-snug"
+                    style={{ fontFamily: 'var(--font-display)', fontSize: '18px', color: '#F5DFA0' }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p
+                    className="flex-1"
+                    style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', lineHeight: '20px', color: 'rgba(245,223,160,0.5)', textAlign: 'justify' }}
+                  >
+                    {post.excerpt}
+                  </p>
+                  <span
+                    className="inline-flex items-center gap-1.5 group-hover:gap-2.5 transition-all duration-300"
+                    style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#C9920E' }}
+                  >
+                    Read More →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center md:hidden">
+            <Link
+              href="/blog"
+              className="inline-block text-[#C9920E] text-xs tracking-[0.15em] uppercase"
+              style={{ fontFamily: 'var(--font-sans)' }}
+            >
+              View All Stories →
+            </Link>
+          </div>
         </div>
       </section>
 

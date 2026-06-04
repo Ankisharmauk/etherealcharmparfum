@@ -31,7 +31,7 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
-          {[['Home', '/'], ['Shop', '/shop'], ['About', '/about']].map(([label, href]) => (
+          {[['Home', '/'], ['Shop', '/shop'], ['Blog', '/blog'], ['About', '/about']].map(([label, href]) => (
             <Link
               key={href}
               href={href}
@@ -75,7 +75,7 @@ export default function Navbar() {
           >
             <X size={24} />
           </button>
-          {[['Home', '/'], ['Shop', '/shop'], ['About', '/about']].map(([label, href]) => (
+          {[['Home', '/'], ['Shop', '/shop'], ['Blog', '/blog'], ['About', '/about']].map(([label, href]) => (
             <Link
               key={href}
               href={href}
