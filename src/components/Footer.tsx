@@ -65,7 +65,7 @@ export default function Footer() {
           <div>
             <p className="text-[#F5DFA0]/70 tracking-widest uppercase text-xs mb-6" style={{ fontFamily: 'var(--font-sans)' }}>Navigate</p>
             <ul className="space-y-3">
-              {[['Home', '/'], ['Shop', '/shop'], ['About', '/about']].map(([label, href]) => (
+              {[['Home', '/'], ['Shop', '/shop'], ['Blog', '/blog'], ['About', '/about']].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="text-[#F5DFA0]/65 text-sm hover:text-[#F5DFA0] transition-colors" style={{ fontFamily: 'var(--font-sans)' }}>
                     {label}
