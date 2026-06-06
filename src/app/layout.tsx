@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Jost } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
 import { CartProvider } from '@/context/CartContext'
 import Navbar from '@/components/Navbar'
 import CartDrawer from '@/components/CartDrawer'
 import Footer from '@/components/Footer'
-import ContactChat from '@/components/ContactChat'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -121,27 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CartDrawer />
           <main className="flex-1">{children}</main>
           <Footer />
-          <ContactChat />
         </CartProvider>
-        {/* Tawk.to — hide default bubble; custom button in ContactChat opens it */}
-        <Script id="tawk-to" strategy="afterInteractive">{`
-          var Tawk_API = Tawk_API || {};
-          Tawk_API.onLoad = function() {
-            Tawk_API.hideWidget();
-          };
-          Tawk_API.onStatusChange = function() {
-            Tawk_API.hideWidget();
-          };
-          var Tawk_LoadStart = new Date();
-          (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/6a216a3ea7b9da1c346301d3/1jq98e1ud';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-          })();
-        `}</Script>
       </body>
     </html>
   )
