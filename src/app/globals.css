@@ -48,6 +48,15 @@ body {
 }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
+/* ── Tawk.to: suppress default bubble flash on load ──────── */
+/* The minimised bubble is hidden via JS (hideWidget) but CSS  */
+/* prevents the brief flash before onLoad fires.               */
+/* The full chat window (opened by our custom button) is       */
+/* a separate element and is unaffected by this rule.          */
+.tawk-min-container {
+  display: none !important;
+}
+
 /* ── Gold silk shimmer ────────────────────────────────────── */
 @keyframes gold-sweep {
   0%   { transform: translateX(-100%); }
