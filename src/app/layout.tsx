@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s — Ethereal Charm',
   },
   description:
-    'Ethereal Charm is a high-concentration gender-neutral parfum crafted in small batches in London. Long-lasting, sophisticated, and unlike anything mass-produced.',
+    'Ethereal Charm is a high-concentration gender-neutral parfum handcrafted in London. Long-lasting, sophisticated, and unlike anything mass-produced.',
   keywords: [
     'luxury perfume London',
     'gender neutral parfum',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
-    description: 'A high-concentration gender-neutral parfum crafted in small batches in London. Long-lasting, sophisticated, unmistakable.',
+    description: 'A high-concentration gender-neutral parfum handcrafted in London. Long-lasting, sophisticated, unmistakable.',
     url: BASE_URL,
     siteName: 'Ethereal Charm',
     type: 'website',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
-    description: 'A high-concentration gender-neutral parfum crafted in small batches in London.',
+    description: 'A high-concentration gender-neutral parfum handcrafted in London.',
     images: ['/images/bottle.png'],
   },
 }
@@ -84,7 +84,7 @@ const organizationSchema = {
   name: 'Ethereal Charm',
   url: BASE_URL,
   logo: `${BASE_URL}/images/bottle.png`,
-  description: 'A luxury gender-neutral parfum crafted in small batches in London.',
+  description: 'A luxury gender-neutral parfum handcrafted in London.',
   foundingLocation: { '@type': 'Place', name: 'London, United Kingdom' },
   taxID: '77 564 307 579',
   sameAs: [

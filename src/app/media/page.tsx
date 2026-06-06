@@ -109,7 +109,7 @@ export default function MediaPage() {
             About Ethereal Charm
           </p>
           <p style={{ fontFamily: 'var(--font-display)', fontSize: '16px', color: CREAM, fontWeight: 300, lineHeight: 1.7, fontStyle: 'italic' }}>
-            Ethereal Charm is a luxury gender-neutral parfum crafted in small batches in London. High-concentration, long-lasting, and made without compromise. ABN 77 564 307 579.
+            Ethereal Charm is a luxury gender-neutral parfum handcrafted in London. High-concentration, long-lasting, and made without compromise. ABN 77 564 307 579.
           </p>
         </div>
 

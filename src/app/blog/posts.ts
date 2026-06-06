@@ -194,8 +194,8 @@ export const blogPosts: BlogPost[] = [
         body: 'The economics of small-batch production are unavoidably more expensive per unit than industrial production. Higher-quality raw materials cost more. Labour costs are not spread across millions of units. Setup costs per batch are higher. The perfumer\'s time (choosing, blending, testing, adjusting) is a genuine cost that is embedded in every bottle. When you buy an artisan parfum, you are paying for all of this. You are also paying for the absence of compromises: no ingredient substitutions for cost reasons, no abbreviated processes, no corner-cutting that would compromise the integrity of the formula.'
       },
       {
-        heading: 'Ethereal Charm\'s Commitment to Small-Batch Craft',
-        body: 'Ethereal Charm is produced in small batches in London, personally overseen by our founder. This is not an affectation; it is the only way to produce what we want to produce. We source ingredients based on quality rather than commodity pricing. We do not abbreviate our production processes. We do not substitute materials when better alternatives cost more. The result is a fragrance that performs differently from a mass-market product: not louder, not more aggressive, but with more depth, more character, and more endurance. It is a fragrance made the way all fragrance was once made, by someone who cares deeply about what ends up in the bottle.'
+        heading: 'Ethereal Charm\'s Commitment to Craft',
+        body: 'Ethereal Charm is produced in London, personally overseen by our founder. This is not an affectation; it is the only way to produce what we want to produce. We source ingredients based on quality rather than commodity pricing. We do not abbreviate our production processes. We do not substitute materials when better alternatives cost more. The result is a fragrance that performs differently from a mass-market product: not louder, not more aggressive, but with more depth, more character, and more endurance. It is a fragrance made the way all fragrance was once made, by someone who cares deeply about what ends up in the bottle.'
       }
     ]
   }

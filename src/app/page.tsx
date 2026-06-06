@@ -3,21 +3,107 @@ import GoldParticles from '@/components/GoldParticles'
 import Link from 'next/link'
 import Image from 'next/image'
 
+const BASE_URL = 'https://www.theetherealcharm.com'
+
 export const metadata: Metadata = {
   title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
-  description: 'Ethereal Charm is a high-concentration gender-neutral parfum crafted in small batches in London. Long-lasting, sophisticated, and unlike anything mass-produced. Shop 10ml and 25ml.',
-  alternates: { canonical: 'https://www.theetherealcharm.com' },
+  description: 'Ethereal Charm is a high-concentration gender-neutral parfum handcrafted in London. Long-lasting, sophisticated, and unlike anything mass-produced. Shop 10ml and 25ml.',
+  alternates: { canonical: BASE_URL },
   openGraph: {
     title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
-    description: 'A high-concentration gender-neutral parfum crafted in small batches in London. Long-lasting, sophisticated, unmistakable.',
-    url: 'https://www.theetherealcharm.com',
+    description: 'A high-concentration gender-neutral parfum handcrafted in London. Long-lasting, sophisticated, unmistakable.',
+    url: BASE_URL,
     type: 'website',
+  },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Ethereal Charm?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ethereal Charm is a luxury gender-neutral parfum handcrafted in London, United Kingdom. It is a high-concentration extrait de parfum with warm, sophisticated notes designed to last for hours on skin.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is Ethereal Charm made?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ethereal Charm is handcrafted in London, United Kingdom, using premium, carefully chosen ingredients. Every bottle is made with precision and care.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Ethereal Charm a gender-neutral perfume?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Ethereal Charm is fully gender-neutral. It is designed to be worn by anyone who values quiet luxury and distinctive presence, regardless of gender.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does Ethereal Charm last on skin?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ethereal Charm is a high-concentration parfum (extrait de parfum), meaning it contains more fragrance oil and less alcohol than standard eau de parfum or eau de toilette. It typically lasts many hours on skin without the need for re-application.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where can I buy Ethereal Charm in Australia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ethereal Charm is available online at theetherealcharm.com and ships to Australia, New Zealand, and internationally. Australian orders are fulfilled and dispatched via Australia Post with estimated delivery of 3 to 7 business days.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What sizes does Ethereal Charm come in?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ethereal Charm is available in two sizes: a 10ml mini parfum (perfect for travel or gifting) and a 25ml full-size parfum. Both are the same high-concentration formula.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does Ethereal Charm smell like?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ethereal Charm is a warm, sophisticated fragrance that blends depth, elegance, and a distinctively modern character. It opens with refined brightness and settles into rich, lasting warmth on the skin, evoking quiet luxury and understated confidence.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Ethereal Charm an independent or artisan perfume brand?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Ethereal Charm is an independent artisan parfum brand founded by a New Zealander based in Australia. Every bottle is handcrafted in London with a full focus on quality, longevity, and individuality.',
+      },
+    },
+  ],
+}
+
+const speakableSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
+  url: BASE_URL,
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.speakable-intro', '.speakable-commitment'],
   },
 }
 
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       {/* Hero — bokeh video background */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-[#C08810]">
 
@@ -56,7 +142,7 @@ export default function HomePage() {
               Ethereal Charm
             </h1>
             <p
-              className="text-base leading-relaxed mb-10 max-w-sm"
+              className="speakable-intro text-base leading-relaxed mb-10 max-w-sm"
               style={{ fontFamily: 'var(--font-sans)', color: '#2C1A06', opacity: 0.82, textAlign: 'justify' }}
             >
               Ethereal Charm is a refined gender-neutral parfum crafted to leave a lasting impression through depth, warmth, and understated elegance. Blending modern sophistication with timeless character, the fragrance is designed for those drawn to quiet luxury and distinctive presence.
@@ -153,7 +239,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-8" style={{ fontFamily: 'var(--font-display)' }}>
             Crafting Unforgettable<br />Experiences
           </h2>
-          <p className="text-white/65 leading-relaxed max-w-2xl mx-auto text-sm" style={{ fontFamily: 'var(--font-sans)', textAlign: 'justify' }}>
+          <p className="speakable-commitment text-white/65 leading-relaxed max-w-2xl mx-auto text-sm" style={{ fontFamily: 'var(--font-sans)', textAlign: 'justify' }}>
             At Ethereal Charm, we prioritise the art of fragrance-making to deliver exceptional experiences. Our commitment lies in creating timeless and evocative scents that resonate with individuality and sophistication.
           </p>
         </div>
