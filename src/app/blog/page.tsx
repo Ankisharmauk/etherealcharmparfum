@@ -7,7 +7,7 @@ const BASE_URL = 'https://www.theetherealcharm.com'
 
 export const metadata: Metadata = {
   title: 'Journal — Fragrance Guides & Perspectives',
-  description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm — a gender-neutral parfum made in London. Learn about parfum concentration, gender-neutral fragrance, and artisan perfumery.',
+  description: 'Fragrance guides and perspectives on luxury parfum from Ethereal Charm. Learn about parfum concentration, gender-neutral fragrance, and artisan perfumery.',
   alternates: { canonical: `${BASE_URL}/blog` },
   openGraph: {
     title: 'Ethereal Charm Journal — Fragrance Guides & Perspectives',

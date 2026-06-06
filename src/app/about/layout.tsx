@@ -4,7 +4,7 @@ const BASE_URL = 'https://www.theetherealcharm.com'
 
 export const metadata: Metadata = {
   title: 'About — The Story Behind Ethereal Charm',
-  description: 'Discover the story behind Ethereal Charm — a gender-neutral luxury parfum born from a Kiwi\'s love affair with London. Crafted with precision, care, and an uncompromising commitment to quality.',
+  description: 'The story of Ethereal Charm — a luxury gender-neutral parfum born from a Kiwi\'s love of London, made with precision and an uncompromising eye for quality.',
   alternates: { canonical: `${BASE_URL}/about` },
   openGraph: {
     title: 'About Ethereal Charm — Luxury Parfum Made in London',

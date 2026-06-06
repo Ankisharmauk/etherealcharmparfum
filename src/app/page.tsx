@@ -7,7 +7,7 @@ const BASE_URL = 'https://www.theetherealcharm.com'
 
 export const metadata: Metadata = {
   title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
-  description: 'Ethereal Charm is a high-concentration gender-neutral parfum handcrafted in London. Long-lasting, sophisticated, and unlike anything mass-produced. Shop 10ml and 25ml.',
+  description: 'Ethereal Charm is a high-concentration gender-neutral parfum handcrafted in London. Long-lasting, sophisticated, and unlike anything mass-produced. Shop now.',
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
