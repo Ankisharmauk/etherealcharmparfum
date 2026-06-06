@@ -126,7 +126,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Tawk.to — hide default bubble; custom button in ContactChat opens it */}
         <Script id="tawk-to" strategy="afterInteractive">{`
           var Tawk_API = Tawk_API || {};
-          Tawk_API.onLoad = function() { Tawk_API.hideWidget(); };
+          Tawk_API.onLoad = function() {
+            Tawk_API.hideWidget();
+          };
+          Tawk_API.onStatusChange = function() {
+            Tawk_API.hideWidget();
+          };
           var Tawk_LoadStart = new Date();
           (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
