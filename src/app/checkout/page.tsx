@@ -24,7 +24,7 @@ export default function CheckoutPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          items: items.map(i => ({ priceId: i.product.stripePriceId, quantity: i.quantity })),
+          items: items.map(i => ({ id: i.product.id, quantity: i.quantity })),
         }),
       })
       const data = await res.json()

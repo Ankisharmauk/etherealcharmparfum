@@ -11,7 +11,6 @@ export interface Product {
   notes: { type: 'top' | 'heart' | 'base'; items: string[] }[]
   details: string[]
   image: string
-  stripePriceId: string
   badge?: string
 }
 
@@ -38,7 +37,6 @@ export const products: Product[] = [
       '10 ml spray bottle',
     ],
     image: '/images/bottle.png',
-    stripePriceId: process.env.STRIPE_PRICE_MINI ?? '',
     badge: 'Best for gifting',
   },
   {
@@ -64,7 +62,6 @@ export const products: Product[] = [
       '25 ml spray bottle',
     ],
     image: '/images/bottle.png',
-    stripePriceId: process.env.STRIPE_PRICE_25ML ?? '',
     badge: 'Limited offer',
   },
 ]
