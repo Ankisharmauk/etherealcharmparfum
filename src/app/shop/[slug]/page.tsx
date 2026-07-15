@@ -32,7 +32,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
           {/* Image panel */}
           <div
-            className="relative aspect-square flex items-center justify-center sticky top-24 overflow-hidden"
+            className="relative aspect-square flex items-center justify-center overflow-hidden"
             style={{
               background: 'linear-gradient(160deg, #1C0E02 0%, #2A1500 55%, #130900 100%)',
               border: '1px solid rgba(201,146,14,0.18)',
