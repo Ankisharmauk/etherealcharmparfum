@@ -94,10 +94,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ],
   }
 
+  const faqLd = post.faq && post.faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faq.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  } : null
+
   return (
     <main style={{ background: '#0D0804', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
 
       {/* Hero image */}
       <div className="relative w-full overflow-hidden" style={{ height: 'clamp(260px, 40vw, 460px)', marginTop: 0 }}>
@@ -234,6 +245,35 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             )}
           </div>
         ))}
+
+        {post.faq && post.faq.length > 0 && (
+          <div className="mt-4 pt-10" style={{ borderTop: '1px solid rgba(201,146,14,0.15)' }}>
+            <h2
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(19px, 2.5vw, 26px)',
+                color: CREAM,
+                fontWeight: 300,
+                lineHeight: 1.3,
+                marginBottom: '20px',
+              }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {post.faq.map(({ question, answer }) => (
+                <div key={question}>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', color: CREAM, marginBottom: '6px', fontWeight: 500 }}>
+                    {question}
+                  </p>
+                  <p style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', lineHeight: '24px', color: 'rgba(245,223,160,0.6)' }}>
+                    {answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </article>
 
       {/* Related posts */}

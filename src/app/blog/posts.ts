@@ -8,6 +8,7 @@ export type BlogPost = {
   author: string
   image: string
   content: { heading: string; body: string }[]
+  faq?: { question: string; answer: string }[]
 }
 
 export const blogPosts: BlogPost[] = [
@@ -23,7 +24,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         heading: 'From "Fragrance Bomb" to "Barely There"',
-        body: 'For the last two decades, fragrance marketing rewarded projection: the bigger the sillage, the better the perfume. That has quietly reversed. The fastest-growing category in fragrance today is the skin scent, a style built around warmth and proximity rather than volume. Search interest in "skin scent" and "smells like nothing but everything" has climbed steadily since 2024, and it shows no sign of slowing. The shift says less about ingredients and more about what people want fragrance to do for them: not announce them, but complete them.'
+        body: 'For the last two decades, fragrance marketing rewarded projection: the bigger the sillage, the better the perfume. That has quietly reversed. Among the styles gaining the most attention right now is the skin scent, built around warmth and proximity rather than volume, and "smells like nothing but everything" has become a genuine shorthand people reach for when describing what they want from a scent. The shift says less about ingredients and more about what people want fragrance to do for them: not announce them, but complete them.'
       },
       {
         heading: 'What Actually Makes a Fragrance a "Skin Scent"',
@@ -44,6 +45,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Ethereal Charm and the Skin Scent Philosophy',
         body: 'Ethereal Charm was built around warmth and closeness long before "skin scent" became a trend term. Its base of sandalwood, amber, and musk was chosen specifically to sit close to the skin rather than project outward, with the heart notes of rose absolute and iris adding just enough presence to feel complete. It is a fragrance made to be discovered, not announced, worn at parfum concentration so that closeness never means it fades early.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What is a "skin scent" in perfumery?',
+        answer: 'A skin scent is a fragrance style built around materials, such as musks, ambrette, soft woods, and a touch of vanilla or amber, that mimic or flatter the natural warmth of skin rather than projecting outward. The goal is a scent that feels like an extension of the wearer rather than something applied on top.'
+      },
+      {
+        question: 'Is a skin scent just a weaker perfume?',
+        answer: 'No. A true skin scent is a deliberate formulation choice, not a lower concentration. A skin scent built at parfum concentration still needs real depth and staying power; it is designed to sit close rather than to smell faint.'
+      },
+      {
+        question: 'How should you apply a skin scent for the best effect?',
+        answer: 'Apply to pulse points rather than spraying broadly, and avoid over-applying. Part of the effect is that people only notice it when they lean in close.'
       }
     ]
   },
@@ -67,7 +82,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'How Many Fragrances You Actually Need',
-        body: 'You do not need a shelf of twenty bottles. Most fragrance-literate wearers settle on two to four in active rotation: something warm and grounding for cooler months, something brighter for warmer ones, and often a more intense, occasion-specific choice for evenings. The goal is not quantity but intentionality. A well-chosen pair of complementary parfums, worn deliberately, communicates more sophistication than a large, indiscriminate collection.'
+        body: 'You do not need a shelf of twenty bottles. Many people who think carefully about fragrance settle on two to four in active rotation: something warm and grounding for cooler months, something brighter for warmer ones, and often a more intense, occasion-specific choice for evenings. The goal is not quantity but intentionality. A well-chosen pair of complementary parfums, worn deliberately, communicates more sophistication than a large, indiscriminate collection.'
       },
       {
         heading: 'Building a Wardrobe Around One Anchor Scent',
@@ -80,6 +95,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Ethereal Charm as an Anchor Fragrance',
         body: 'Ethereal Charm was designed to work precisely as that anchor piece: gender-neutral, warm at its base, complex enough to hold its own in any season, and available in a 10ml size specifically so it can sit alongside other fragrances without demanding to be the only one you own. It is the fragrance you reach for on the days you are not sure what else to wear, because it is never wrong.'
+      }
+    ],
+    faq: [
+      {
+        question: 'How many fragrances should a fragrance wardrobe include?',
+        answer: 'There is no fixed number, but many people who think carefully about fragrance settle on two to four in active rotation: something warm for cooler months, something brighter for warmer ones, and often a more intense option for evenings.'
+      },
+      {
+        question: 'What is a good starting point for building a fragrance wardrobe?',
+        answer: 'Start with one anchor fragrance you trust completely, ideally a gender-neutral parfum with a warm base, then add a brighter, seasonal option and build outward from there.'
+      },
+      {
+        question: 'Why rotate fragrances instead of wearing one every day?',
+        answer: 'Wearing the same scent daily can lead to nose fatigue, where you stop registering it yourself. Rotating fragrances keeps a scent vivid to you and better matches how performance changes with temperature and humidity.'
       }
     ]
   },
@@ -95,7 +124,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         heading: 'Amber Everywhere',
-        body: 'Walk through any fragrance launch list from the past eighteen months and one word recurs more than any other: amber. It has gone from a reliable supporting player in the base of countless fragrances to the headline note driving entire collections. This is not a coincidence of marketing. Amber sits at the intersection of warmth, comfort, and depth, three qualities that fragrance buyers have consistently prioritised as the broader mood has shifted toward comfort-driven, close-to-skin scent profiles.'
+        body: 'Scan recent fragrance launches and one word keeps recurring: amber. It has gone from a reliable supporting player in the base of countless fragrances to the headline note driving entire collections. That is less a coincidence of marketing than a reflection of what amber offers: warmth, comfort, and depth, three qualities that line up neatly with the broader shift toward comfort-driven, close-to-skin scent profiles.'
       },
       {
         heading: 'What Amber Actually Is',
@@ -107,7 +136,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Amber and Gender-Neutral Fragrance',
-        body: 'Amber has a particular advantage in gender-neutral perfumery: it carries almost none of the coded floral or aquatic signals that fragrance marketing has historically used to assign scents to a gender. It reads simply as warm and rich, which is a large part of why so many of the most successful gender-neutral launches of the past few years lean on it heavily. It flatters a wide range of skin chemistries and works equally well as a foundation for something ornate or something minimal.'
+        body: 'Amber has a particular advantage in gender-neutral perfumery: it carries almost none of the coded floral or aquatic signals that fragrance marketing has historically used to assign scents to a gender. It reads simply as warm and rich, which is part of why it turns up so often in gender-neutral launches. It flatters a wide range of skin chemistries and works equally well as a foundation for something ornate or something minimal.'
       },
       {
         heading: 'How to Spot Good Amber vs Generic Amber',
@@ -116,6 +145,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Amber at the Heart of Ethereal Charm',
         body: 'Amber sits at the core of Ethereal Charm\'s base, alongside sandalwood, musk, and vetiver, chosen specifically for the way it deepens and warms over the course of a wear rather than sitting static. At parfum concentration, that amber base has room to develop fully, which is why the fragrance feels different (richer, warmer) at hour eight than it did at the moment of application.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What is amber in perfumery?',
+        answer: 'Despite the name, amber rarely refers to fossilised tree resin. It is a perfumer\'s accord typically built from labdanum, benzoin, and vanilla, sometimes with frankincense or myrrh, producing a warm, resinous character.'
+      },
+      {
+        question: 'Why is amber used as a base note?',
+        answer: 'Amber has strong tenacity, meaning it lasts on skin far longer than top or heart notes, making it a reliable anchor for the base of a fragrance that remains present hours after the opening has faded.'
+      },
+      {
+        question: 'Does amber work well in gender-neutral fragrance?',
+        answer: 'Yes. Amber carries little of the coded floral or aquatic signalling fragrance marketing has historically used to assign scents to a gender, so it reads simply as warm and rich on a wide range of skin types.'
       }
     ]
   },
@@ -153,12 +196,26 @@ export const blogPosts: BlogPost[] = [
         heading: 'Ethereal Charm and Honest Discovery',
         body: 'We would rather you discover Ethereal Charm through a genuinely useful description than a vague one: it is a gender-neutral parfum with bergamot and pink pepper at the opening, rose absolute and jasmine at the heart, and sandalwood, amber, and musk at the base, formulated to last eight to twelve hours. If that note list appeals to you on paper, the 10ml Mini is built specifically to let you try it on your own skin before committing to the full bottle.'
       }
+    ],
+    faq: [
+      {
+        question: 'How has social media changed the way people discover perfume?',
+        answer: 'Discovery has shifted from in-store testing and department-store sales assistants to short-form video, where creators describe notes, longevity, and how a scent evolves over a full day of wear.'
+      },
+      {
+        question: 'What should you look for in a useful fragrance review?',
+        answer: 'A useful review mentions concentration, specific longevity in hours, how the scent evolves from opening to drydown, and whether it was tested on skin rather than sprayed on paper alone.'
+      },
+      {
+        question: 'Can you choose a fragrance based on a video alone?',
+        answer: 'Not reliably. Skin chemistry is individual, and the same fragrance can smell different on two people. Use video reviews to build a shortlist, then test your top choices on your own skin before buying.'
+      }
     ]
   },
   {
     slug: 'gourmand-fragrance-trend',
     title: 'Gourmand Fragrance: Why Perfume Is Starting to Smell Like Dessert',
-    excerpt: 'Vanilla, praline, tonka bean, cocoa: fragrance counters increasingly smell like a bakery. The gourmand category, once a niche corner of perfumery, has become one of the fastest-growing styles in the industry. Here is what defines a gourmand fragrance and why it works.',
+    excerpt: 'Vanilla, praline, tonka bean, cocoa: fragrance counters increasingly smell like a bakery. The gourmand category, once a niche corner of perfumery, has moved firmly into the mainstream. Here is what defines a gourmand fragrance and why it works.',
     date: '28 June 2026',
     category: 'Trends',
     readTime: '5 min read',
@@ -167,11 +224,11 @@ export const blogPosts: BlogPost[] = [
     content: [
       {
         heading: 'The Bakery Aisle of Fine Fragrance',
-        body: 'Gourmand fragrances, built around edible-smelling notes like vanilla, caramel, praline, cocoa, and tonka bean, have moved from a niche curiosity to one of the dominant styles in modern perfumery. What was once considered too literal or too sweet for serious fragrance is now driving some of the most talked-about launches of the past several years. The category has matured considerably, moving away from one-note sweetness toward genuinely complex compositions that use gourmand notes as one element of a larger structure.'
+        body: 'Gourmand fragrances, built around edible-smelling notes like vanilla, caramel, praline, cocoa, and tonka bean, have moved from a niche curiosity to a firmly mainstream style in modern perfumery. What was once considered too literal or too sweet for serious fragrance now shows up regularly among the season\'s more talked-about launches. The category has matured considerably, moving away from one-note sweetness toward genuinely complex compositions that use gourmand notes as one element of a larger structure.'
       },
       {
         heading: 'Why Gourmand Notes Feel So Comforting',
-        body: 'There is a straightforward psychological explanation for why gourmand fragrances resonate so strongly: warm, sweet, food-adjacent smells are among the most powerfully comforting scents a human nose encounters, tied to childhood, warmth, and safety in ways that florals or citrus rarely are. In a period defined by economic uncertainty and general anxiety, a genre of fragrance built around comfort rather than aspiration or status has an obvious appeal.'
+        body: 'There is a fairly intuitive explanation for why gourmand fragrances resonate so strongly: warm, sweet, food-adjacent smells tend to read as comforting, often carrying associations with childhood, warmth, and safety in a way florals or citrus rarely do. A genre of fragrance built around comfort rather than aspiration or status has an obvious, durable appeal.'
       },
       {
         heading: 'From Sweet to Sophisticated',
@@ -188,6 +245,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'A Touch of Gourmand in Ethereal Charm',
         body: 'Ethereal Charm is not a gourmand fragrance in the strict sense, but its base carries a soft warmth (amber, musk, a hint of sweetness beneath the sandalwood) that draws on the same comforting register the gourmand trend has made popular. It is a reminder that warmth and comfort in fragrance do not require literal dessert notes; they can come from a beautifully balanced base built with the same intention.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What makes a fragrance "gourmand"?',
+        answer: 'A gourmand fragrance is built around edible-smelling notes such as vanilla, caramel, praline, cocoa, or tonka bean, designed to evoke warmth and comfort rather than a literal dessert smell.'
+      },
+      {
+        question: 'How do you wear a gourmand fragrance without it feeling too sweet?',
+        answer: 'Apply lightly, two light applications rather than a heavy spray, and look for formulas that balance sweetness with a smoky resin, bitter, or woody note to keep it from tipping into pure confectionery.'
+      },
+      {
+        question: 'Is gourmand fragrance only for cooler months?',
+        answer: 'It tends to suit cooler months and evening wear best, since warmth reads as more appropriate then, though well-balanced gourmand fragrances with a lighter hand can work year-round.'
       }
     ]
   },
@@ -225,6 +296,20 @@ export const blogPosts: BlogPost[] = [
         heading: 'Layering with Ethereal Charm',
         body: 'Ethereal Charm\'s warm, grounded base of sandalwood, amber, and musk was formulated specifically to work well as an anchor layer: it sits underneath brighter, more seasonal fragrances without fighting for attention, adding depth and longevity rather than competing with the top notes of whatever is layered above it. It is one of the reasons the 10ml Mini has become popular as a layering companion alongside a wearer\'s existing fragrance wardrobe.'
       }
+    ],
+    faq: [
+      {
+        question: 'What is fragrance layering?',
+        answer: 'Layering means combining two or more scented products, typically an unscented base, a body product, and a parfum, or two complementary parfums, to build a scent profile unique to the wearer.'
+      },
+      {
+        question: 'What order should you apply layered fragrances in?',
+        answer: 'Apply the lighter or more subtle product first, let it settle for a minute or two, then apply the more dominant scent on top. Applying in the reverse order lets the stronger scent overwhelm the subtler one before it can establish itself.'
+      },
+      {
+        question: 'What is the most common mistake when layering fragrance?',
+        answer: 'Using too much product. Layering is additive, so even two moderate applications combined can become overwhelming. Start with less than you think you need on each layer.'
+      }
     ]
   },
   {
@@ -247,7 +332,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'The Marketing Budget Problem',
-        body: 'A significant portion of what you pay for a designer fragrance goes toward marketing: celebrity campaigns, print advertising, elaborate packaging, and retail placement fees. Industry estimates suggest marketing and packaging can represent a larger share of a designer fragrance\'s retail price than the fragrance oil itself. Independent producers, without those overheads, can direct a much larger proportion of the price toward the actual formulation, which is one reason a well-made independent parfum can rival a far more expensive designer bottle in quality.'
+        body: 'A meaningful portion of what you pay for a designer fragrance goes toward marketing: celebrity campaigns, print advertising, elaborate packaging, and retail placement fees, costs that scale with a global launch in a way a small, independent release simply does not carry. Independent producers, without those overheads, can direct a much larger proportion of the price toward the actual formulation, which is one reason a well-made independent parfum can rival a far more expensive designer bottle in quality.'
       },
       {
         heading: 'Concentration Is a Better Signal Than Category',
@@ -260,6 +345,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Where Ethereal Charm Sits',
         body: 'Ethereal Charm is independently made in London in small batches, at parfum concentration, with ingredients chosen for quality rather than cost efficiency. It does not carry a designer name or a marketing budget behind it. What it carries instead is a formula built without the compromises that scale usually demands, which is the actual distinction worth caring about, regardless of which side of the niche-versus-designer line a fragrance falls on.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What is the actual difference between niche and designer perfume?',
+        answer: 'The terms describe distribution and business model more than quality. Designer fragrances are typically produced or licensed by large beauty conglomerates and distributed widely, while niche fragrances are usually produced independently and distributed more selectively.'
+      },
+      {
+        question: 'Is niche perfume always better quality than designer perfume?',
+        answer: 'Not necessarily. It is a tendency rather than a rule. Independent producers often have more flexibility to use costlier materials and take formulation risks, but there are excellent designer fragrances and mediocre niche ones.'
+      },
+      {
+        question: 'What is a more reliable signal of quality than the niche-versus-designer label?',
+        answer: 'Fragrance concentration. A genuine parfum, at 20 to 40% fragrance oil, costs meaningfully more to produce than an eau de toilette at 5 to 15%, regardless of which category the brand falls into.'
       }
     ]
   },
@@ -297,6 +396,20 @@ export const blogPosts: BlogPost[] = [
         heading: 'Ethereal Charm and the Slow Fragrance Approach',
         body: 'Ethereal Charm is made in small batches, released without seasonal drops or artificial scarcity, specifically so it can be a fragrance people build a long relationship with rather than a limited release to chase. The 10ml Mini exists precisely to support the slow fragrance approach: a low-commitment way to genuinely get to know the scent over several weeks before deciding whether it belongs in your longer-term rotation.'
       }
+    ],
+    faq: [
+      {
+        question: 'What does "slow fragrance" mean?',
+        answer: 'Slow fragrance means buying less often but choosing more carefully: testing a fragrance over several wears before committing, prioritising formulation quality over quantity of bottles, and finishing a bottle before starting the next.'
+      },
+      {
+        question: 'Is slow fragrance more expensive?',
+        answer: 'Not necessarily. A higher-quality parfum worn sparingly often works out cheaper per wearing than a larger bottle of a weaker concentration used more liberally, since less product is needed per application.'
+      },
+      {
+        question: 'Why does wearing one fragrance consistently matter?',
+        answer: 'It lets a genuine relationship build between the wearer and the scent over time, something that does not happen with fragrances discarded after only a few wears.'
+      }
     ]
   },
   {
@@ -333,12 +446,26 @@ export const blogPosts: BlogPost[] = [
         heading: 'How Ethereal Charm Performs Across Seasons',
         body: 'Ethereal Charm was built to sit closer to the all-season end of the spectrum: a bright bergamot and pink pepper opening keeps it from feeling heavy in warmer months, while the sandalwood, amber, and musk base gives it enough depth to hold its own once the weather turns cold. It is not marketed as a seasonal fragrance because it was not formulated as one; the balance between its opening and base was deliberately designed to carry across the year.'
       }
+    ],
+    faq: [
+      {
+        question: 'Why does the same perfume smell different in summer vs winter?',
+        answer: 'Heat accelerates the evaporation of fragrance molecules, so a scent projects more strongly and fades faster in summer heat than on a cold day, which changes how balanced or overwhelming it feels.'
+      },
+      {
+        question: 'What type of fragrance works best in warm weather?',
+        answer: 'Lighter, brighter compositions, such as citrus, green notes, light florals, and clean musks, generally perform better in heat than heavy, resinous fragrances, which can feel cloying once warmth amplifies their projection.'
+      },
+      {
+        question: 'Can one fragrance work across all seasons?',
+        answer: 'Some fragrances are formulated to perform well across a wide temperature range by balancing a bright opening against a warm, grounded base, making them useful as a year-round anchor.'
+      }
     ]
   },
   {
     slug: 'psychology-of-scent-confidence',
     title: 'The Psychology of Scent: Why Perfume Changes How You Feel',
-    excerpt: 'Fragrance is often talked about purely as something other people notice. But the strongest effect of a great parfum may be on the wearer themselves. Here is what the research says about scent, memory, and confidence, and why the right fragrance can change how you carry yourself.',
+    excerpt: 'Fragrance is often talked about purely as something other people notice. But the strongest effect of a great parfum may be on the wearer themselves. Here is what we know about scent, memory, and confidence, and why the right fragrance can change how you carry yourself.',
     date: '8 June 2026',
     category: 'Perspectives',
     readTime: '6 min read',
@@ -350,8 +477,8 @@ export const blogPosts: BlogPost[] = [
         body: 'Unlike sight or sound, olfactory signals travel almost directly to the limbic system, the region of the brain responsible for emotion and memory, without first passing through the more analytical relay station that other sensory information goes through. This is part of why a single scent can trigger a vivid emotional memory more powerfully and more instantly than an old photograph or a familiar song. Fragrance is not just detected; it is processed by the same part of the brain that handles feeling.'
       },
       {
-        heading: 'The Confidence Effect: What the Research Suggests',
-        body: 'Several studies on scent and self-perception have found that wearing a fragrance a person genuinely likes measurably affects their self-reported confidence and social comfort, independent of how other people actually perceive the scent. In other words, a significant part of what a great fragrance does happens entirely inside the wearer, regardless of whether anyone else consciously notices it. This reframes fragrance as less of a performance for others and more of a private psychological tool.'
+        heading: 'The Confidence Effect: A Private Rather Than a Public Effect',
+        body: 'Wearing a fragrance you genuinely like tends to affect how confident and comfortable you feel, independent of how other people actually perceive the scent. In other words, a meaningful part of what a great fragrance does happens entirely inside the wearer, regardless of whether anyone else consciously notices it. This reframes fragrance as less of a performance for others and more of a private psychological tool.'
       },
       {
         heading: 'Why a Signature Scent Becomes Part of Identity',
@@ -368,6 +495,20 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'What This Means for How We Made Ethereal Charm',
         body: 'Ethereal Charm was developed around exactly this idea: not primarily how it would be perceived by others, but how it would feel to wear, day after day. Its warmth, its longevity, and its closeness to skin were all formulation choices aimed at making the fragrance feel like a genuine extension of the wearer rather than something applied over the top of them. If the psychology of scent holds, that closeness is precisely what makes it work.'
+      }
+    ],
+    faq: [
+      {
+        question: 'Why does scent affect memory and emotion so strongly?',
+        answer: 'Olfactory signals travel to the limbic system, the brain region responsible for emotion and memory, without first passing through the same relay pathway other senses use, part of why a scent can trigger a vivid memory almost instantly.'
+      },
+      {
+        question: 'Does wearing a fragrance you like actually affect how confident you feel?',
+        answer: 'Wearing a fragrance you genuinely like tends to affect how confident and comfortable you feel, independent of how others perceive it. Much of what a fragrance does happens for the wearer, not just for an audience.'
+      },
+      {
+        question: 'How do people use scent as part of a pre-performance ritual?',
+        answer: 'Some people build an association between a specific fragrance and a composed, confident state by wearing it consistently before high-pressure moments like public speaking or performances, similar to how a specific song or item of clothing can function as a psychological anchor.'
       }
     ]
   },
