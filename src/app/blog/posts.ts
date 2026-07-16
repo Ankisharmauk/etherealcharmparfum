@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Trends',
     readTime: '5 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80',
     content: [
       {
         heading: 'Amber Everywhere',
@@ -220,7 +220,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Trends',
     readTime: '5 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1615400327023-a9e6caee2e5f?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1638295916768-459f6cf440bc?w=1200&q=80',
     content: [
       {
         heading: 'The Bakery Aisle of Fine Fragrance',
@@ -370,7 +370,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Perspectives',
     readTime: '5 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80',
     content: [
       {
         heading: 'Fragrance\'s Fast Fashion Problem',
@@ -470,7 +470,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Perspectives',
     readTime: '6 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1615400327023-a9e6caee2e5f?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1638295916768-459f6cf440bc?w=1200&q=80',
     content: [
       {
         heading: 'Smell Is Wired Differently Than Your Other Senses',
@@ -596,7 +596,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Craft',
     readTime: '5 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1541643600914-78b084683702?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80',
     content: [
       {
         heading: 'Provenance Matters More Than People Think',
@@ -672,7 +672,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Craft',
     readTime: '6 min read',
     author: 'Ethereal Charm',
-    image: 'https://images.unsplash.com/photo-1615400327023-a9e6caee2e5f?w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1638295916768-459f6cf440bc?w=1200&q=80',
     content: [
       {
         heading: 'The Scale Problem in Modern Perfumery',
