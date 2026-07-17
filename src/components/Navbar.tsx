@@ -15,7 +15,7 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-[#C9920E]/25 bg-[#7A4800]/95 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/logo.jpg"
+            src="/images/logo.png"
             alt="Ethereal Charm"
             width={52}
             height={52}

@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       '@type': 'Organization',
       name: 'Ethereal Charm',
       url: BASE_URL,
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.jpg` },
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/logo.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/blog/${post.slug}` },
     isPartOf: {
