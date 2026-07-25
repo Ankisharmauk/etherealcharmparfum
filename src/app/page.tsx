@@ -271,7 +271,7 @@ export default function HomePage() {
                 cta: 'Follow The Big Market London',
               },
             ].map(({ name, place, body, href, cta }) => (
-              <div key={name} className="p-4 md:p-10 bg-white/50 border border-[#C9920E]/25">
+              <div key={name} className="flex flex-col p-4 md:p-10 bg-white/50 border border-[#C9920E]/25">
                 <div className="w-6 h-px bg-[#C9920E]/60 mb-3 md:mb-6" />
                 <h3 className="text-base md:text-2xl font-light text-[#2C1A06] mb-1 md:mb-2 leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
                   {name}
@@ -286,7 +286,7 @@ export default function HomePage() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 md:gap-3 group text-[#C9920E] text-[9px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase pb-1 border-b border-[#C9920E]/40"
+                  className="inline-flex items-center gap-2 md:gap-3 group text-[#C9920E] text-[9px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] uppercase pb-1 border-b border-[#C9920E]/40 mt-auto self-start"
                   style={{ fontFamily: 'var(--font-sans)' }}
                 >
                   {cta}
