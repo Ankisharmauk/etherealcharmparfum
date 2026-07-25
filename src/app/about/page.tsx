@@ -251,6 +251,63 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── PARTNERSHIPS ──────────────────────────────────────────── */}
+      <section style={{ background: '#100904', borderTop: '1px solid rgba(201,146,14,0.12)', borderBottom: '1px solid rgba(201,146,14,0.12)', padding: '100px 0' }}>
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <p className="reveal tracking-[0.35em] uppercase font-light mb-4 text-center" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: GOLD }}>
+            In Good Company
+          </p>
+          <h2 className="reveal font-light text-center mb-16" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 44px)', color: CREAM, transitionDelay: '0.1s' }}>
+            Our Partners
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                name: 'We Are Slam Society',
+                place: 'Sydney & the Sutherland Shire, Australia',
+                body: 'Ethereal Charm is proud to partner with We Are Slam Society, a fast-growing sisterhood connecting women across Sydney and the Sutherland Shire through curated events, wellness getaways and social gatherings. We’re honoured to be part of the moments of connection their community creates.',
+                href: 'https://www.slamsociety.com.au/',
+                cta: 'Visit Slam Society',
+              },
+              {
+                name: 'The Big Market London',
+                place: 'London, United Kingdom',
+                body: 'You’ll also find Ethereal Charm at The Big Market London, a celebrated showcase of the capital’s finest independent makers and small businesses, held at venues across the city. Come find us in person at their next market.',
+                href: 'https://www.instagram.com/thebigmarketlondon/',
+                cta: 'Follow The Big Market London',
+              },
+            ].map(({ name, place, body, href, cta }, i) => (
+              <div
+                key={name}
+                className="reveal"
+                style={{ background: 'rgba(201,146,14,0.04)', border: '1px solid rgba(201,146,14,0.15)', padding: '40px 32px', transitionDelay: `${i * 0.12}s` }}
+              >
+                <div style={{ width: 24, height: 1, background: 'rgba(201,146,14,0.5)', marginBottom: 24 }} />
+                <h3 className="font-light mb-2" style={{ fontFamily: 'var(--font-display)', fontSize: '22px', color: CREAM, lineHeight: 1.25 }}>
+                  {name}
+                </h3>
+                <p className="mb-5 tracking-widest uppercase" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: 'rgba(245,223,160,0.45)' }}>
+                  {place}
+                </p>
+                <p className="mb-6" style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', lineHeight: '22px', color: 'rgba(245,223,160,0.5)', textAlign: 'justify' }}>
+                  {body}
+                </p>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 group"
+                  style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, borderBottom: '1px solid rgba(201,146,14,0.4)', paddingBottom: '4px' }}
+                >
+                  {cta}
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CONTACT ───────────────────────────────────────────────── */}
       <section style={{ padding: '112px 0', background: DARK }}>
         <div className="max-w-xl mx-auto px-6 md:px-12">
