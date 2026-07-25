@@ -245,6 +245,59 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Our Partners */}
+      <section className="py-28 bg-[#FBF4E3]">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <p className="text-[#C9920E] tracking-[0.3em] uppercase text-xs mb-4 text-center font-light" style={{ fontFamily: 'var(--font-sans)' }}>
+            In Good Company
+          </p>
+          <h2 className="text-4xl md:text-5xl font-light text-[#2C1A06] leading-tight mb-16 text-center" style={{ fontFamily: 'var(--font-display)' }}>
+            Our Partners
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                name: 'We Are Slam Society',
+                place: 'Sydney & the Sutherland Shire, Australia',
+                body: 'Ethereal Charm partners with We Are Slam Society, a sisterhood connecting women across Sydney and the Sutherland Shire through curated events and meaningful community.',
+                href: 'https://www.slamsociety.com.au/',
+                cta: 'Visit Slam Society',
+              },
+              {
+                name: 'The Big Market London',
+                place: 'London, United Kingdom',
+                body: 'Ethereal Charm partners with The Big Market London, a celebrated showcase of the capital’s finest independent makers and small businesses.',
+                href: 'https://www.instagram.com/thebigmarketlondon/',
+                cta: 'Follow The Big Market London',
+              },
+            ].map(({ name, place, body, href, cta }) => (
+              <div key={name} className="p-10 bg-white/50 border border-[#C9920E]/25">
+                <div className="w-6 h-px bg-[#C9920E]/60 mb-6" />
+                <h3 className="text-2xl font-light text-[#2C1A06] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                  {name}
+                </h3>
+                <p className="text-[#2C1A06]/45 text-xs tracking-widest uppercase mb-5" style={{ fontFamily: 'var(--font-sans)' }}>
+                  {place}
+                </p>
+                <p className="text-[#2C1A06]/65 text-sm leading-relaxed mb-6" style={{ fontFamily: 'var(--font-sans)', textAlign: 'justify' }}>
+                  {body}
+                </p>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 group text-[#C9920E] text-xs tracking-[0.2em] uppercase pb-1 border-b border-[#C9920E]/40"
+                  style={{ fontFamily: 'var(--font-sans)' }}
+                >
+                  {cta}
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* The Collection — dark premium */}
       <section
         className="py-24"
