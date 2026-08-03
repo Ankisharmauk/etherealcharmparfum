@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#6B3600] border-t border-[#C9920E]/30">
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           <div>
             <p className="text-[#F5DFA0] tracking-[0.25em] uppercase text-sm font-light mb-4" style={{ fontFamily: 'var(--font-sans)' }}>
               Ethereal Charm
@@ -66,6 +66,23 @@ export default function Footer() {
             <p className="text-[#F5DFA0]/70 tracking-widest uppercase text-xs mb-6" style={{ fontFamily: 'var(--font-sans)' }}>Navigate</p>
             <ul className="space-y-3">
               {[['Home', '/'], ['Shop', '/shop'], ['Blog', '/blog'], ['About', '/about'], ['Contact', '/contact']].map(([label, href]) => (
+                <li key={href}>
+                  <Link href={href} className="text-[#F5DFA0]/65 text-sm hover:text-[#F5DFA0] transition-colors" style={{ fontFamily: 'var(--font-sans)' }}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-[#F5DFA0]/70 tracking-widest uppercase text-xs mb-6" style={{ fontFamily: 'var(--font-sans)' }}>Programs</p>
+            <ul className="space-y-3">
+              {[
+                ['Creators & Rewards', '/creators'],
+                ['Wholesale & Partnerships', '/wholesale-partnerships'],
+                ['Hotels & Corporate Gifting', '/hospitality-gifting'],
+              ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="text-[#F5DFA0]/65 text-sm hover:text-[#F5DFA0] transition-colors" style={{ fontFamily: 'var(--font-sans)' }}>
                     {label}

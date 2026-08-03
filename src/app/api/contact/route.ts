@@ -9,6 +9,7 @@ export async function POST(req: NextRequest) {
   const email = body.email || ''
   const message = body.message || ''
   const name = body.name || [firstName, lastName].filter(Boolean).join(' ') || email
+  const subject = body.subject || `New message from ${name}`
 
   if (!email || !message) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
@@ -36,7 +37,7 @@ export async function POST(req: NextRequest) {
         },
         to: [{ email: 'info@theetherealcharm.com', name: 'Ethereal Charm' }],
         replyTo: { email, name },
-        subject: `New message from ${name}`,
+        subject,
         htmlContent: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px;background:#faf7f2;border:1px solid #e8d8b0;">
             <h2 style="color:#C9920E;font-weight:400;margin-bottom:8px;">New Contact Message</h2>
