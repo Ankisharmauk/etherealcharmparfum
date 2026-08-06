@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 const BASE_URL = 'https://www.theetherealcharm.com'
 
 export const metadata: Metadata = {
-  title: 'Wholesale & Partnerships — Ethereal Charm',
+  title: 'Wholesale & Partnerships',
   description: 'Partner with Ethereal Charm through wholesale stocking, trial placement, revenue share or bespoke gifting. For boutiques, retailers, event organisers and corporate partners.',
   alternates: { canonical: `${BASE_URL}/wholesale-partnerships` },
   openGraph: {

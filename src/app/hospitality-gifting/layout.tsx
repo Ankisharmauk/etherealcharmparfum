@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 const BASE_URL = 'https://www.theetherealcharm.com'
 
 export const metadata: Metadata = {
-  title: 'Hotels, Spas & Corporate Gifting — Ethereal Charm',
+  title: 'Hotels, Spas & Corporate Gifting',
   description: 'Elevate guest stays, client relationships and special moments with Ethereal Charm. VIP gifting, spa placements and bespoke corporate gifting, starting with a trial.',
   alternates: { canonical: `${BASE_URL}/hospitality-gifting` },
   openGraph: {

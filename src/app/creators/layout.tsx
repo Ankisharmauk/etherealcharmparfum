@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 const BASE_URL = 'https://www.theetherealcharm.com'
 
 export const metadata: Metadata = {
-  title: 'Creators & Rewards — Ethereal Charm',
+  title: 'Creators & Rewards',
   description: 'Review Ethereal Charm, create content or refer a friend and earn rewards. Open to customers, UGC creators, micro-influencers and referral partners — no large following required.',
   alternates: { canonical: `${BASE_URL}/creators` },
   openGraph: {
