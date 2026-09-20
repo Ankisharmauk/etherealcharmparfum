@@ -89,7 +89,7 @@ export default function AboutPage() {
           </div>
 
           <p className="reveal tracking-[0.25em] uppercase" style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', color: 'rgba(245,223,160,0.5)', transitionDelay: '0.4s' }}>
-            — Founder, Ethereal Charm
+            — Ankita Sharma, Founder, Ethereal Charm
           </p>
         </div>
 
