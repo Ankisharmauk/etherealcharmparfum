@@ -138,7 +138,7 @@ export default function AboutPage() {
             <div className="space-y-6">
               {[
                 'Ethereal Charm was born not in a laboratory, but from a feeling. The unmistakable warmth of walking through a London market on a cold morning, the silk of a well-worn leather book, the quiet confidence of a room that smells extraordinary.',
-                'Our founder, a New Zealander who found her creative home in London, spent years searching for a fragrance that felt both timeless and alive. When she could not find it, she made it herself. The first bottle was made on a Mother\'s Day in London — a fitting beginning for something born out of love.',
+                'Our founder, Ankita Sharma, a New Zealander who found her creative home in London, spent years searching for a fragrance that felt both timeless and alive. When she could not find it, she made it herself. The first bottle was made on a Mother\'s Day in London — a fitting beginning for something born out of love.',
                 'Every bottle is handcrafted in London with precision and care. No shortcuts, no compromise. The formula is a high-concentration parfum, more oil, less filler, so it lasts on the skin for hours without re-application.',
                 'Ethereal Charm is designed to be worn by anyone who refuses to be ordinary. It does not ask what gender you are. It only asks how you want to feel.',
               ].map((para, i) => (
