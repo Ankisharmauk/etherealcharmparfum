@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Founder of Ethereal Charm',
+  name: 'Ankita Sharma',
   jobTitle: 'Founder',
   worksFor: {
     '@type': 'Organization',
@@ -57,7 +57,7 @@ const brandSchema = {
   slogan: 'Discover the Essence of Ethereal Charm',
   founder: {
     '@type': 'Person',
-    name: 'Founder of Ethereal Charm',
+    name: 'Ankita Sharma',
     nationality: 'New Zealander',
     homeLocation: 'Australia',
   },
