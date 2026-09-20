@@ -254,7 +254,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-light text-[#2C1A06] leading-tight mb-16 text-center" style={{ fontFamily: 'var(--font-display)' }}>
             Our Partners
           </h2>
-          <div className="grid grid-cols-2 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
             {[
               {
                 name: 'We Are Slam Society',
@@ -269,6 +269,13 @@ export default function HomePage() {
                 body: 'Ethereal Charm partners with The Big Market London, a celebrated showcase of the capital’s finest independent makers and small businesses.',
                 href: 'https://www.instagram.com/thebigmarketlondon/',
                 cta: 'Follow The Big Market London',
+              },
+              {
+                name: 'The Lollipop Collective',
+                place: 'Sydney, Australia',
+                body: 'Ethereal Charm partners with The Lollipop Collective, a curated retail community bringing independent businesses together in beautifully presented collective stores and markets.',
+                href: 'https://www.instagram.com/lollipopcollectivemarkets/',
+                cta: 'Follow The Lollipop Collective',
               },
             ].map(({ name, place, body, href, cta }) => (
               <div key={name} className="flex flex-col p-4 md:p-10 bg-white/50 border border-[#C9920E]/25">
