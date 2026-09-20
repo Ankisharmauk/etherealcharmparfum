@@ -13,6 +13,214 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'perfume-gift-guide',
+    title: 'The Perfume Gift Guide: How to Choose a Fragrance for Someone Else',
+    excerpt: 'Buying perfume for another person is one of the hardest gifts to get right, and one of the most memorable when you do. Here is a simple, practical way to choose a fragrance for someone else, without guessing or relying on the loudest bestseller.',
+    date: '18 September 2026',
+    category: 'Guide',
+    readTime: '5 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=1200&q=80',
+    content: [
+      {
+        heading: 'Why Perfume Is Such a Personal Gift',
+        body: 'Fragrance is chemistry, memory, and identity all at once, which is exactly why it feels risky to give. A perfume that smells wonderful on you can smell entirely different on someone else, because skin chemistry changes how the notes develop. The good news is that you can reduce the risk considerably by shifting the question from "what do I like?" to "what does this person already reach for?"'
+      },
+      {
+        heading: 'Start With What They Already Wear',
+        body: 'The most reliable clue is the fragrance they wear now. Notice whether it leans fresh and citrusy, floral, woody, or warm and sweet, and stay within the same family. If you cannot get close enough to find out, look at the rest of their taste: someone who loves a clean, minimal wardrobe often prefers understated skin-like scents, while someone drawn to rich textures and jewellery tone usually enjoys deeper amber and woody notes.'
+      },
+      {
+        heading: 'Choose a Gender-Neutral Fragrance When in Doubt',
+        body: 'Fragrance families do not belong to any one gender, and the most versatile gift perfumes are the ones designed without that division in mind. Balanced compositions built around woods, amber, musk, and refined florals suit a wide range of people and skin types, which makes them a safer choice when you are buying for a partner, a friend, or a colleague you do not know well.'
+      },
+      {
+        heading: 'Consider a Smaller Size First',
+        body: 'A full-size bottle is a commitment. A travel or mini size lets the recipient live with the scent before deciding it is their signature, and it removes the pressure if their preference turns out to be slightly different from what you expected. A mini also makes a thoughtful add-on to another gift, or a way to introduce someone to a fragrance house they have not tried before.'
+      },
+      {
+        heading: 'Look at Concentration and Longevity',
+        body: 'A gift should last. Parfum concentration carries more fragrance oil than eau de toilette or eau de parfum, which means the scent stays on the skin longer and needs fewer applications. For a gift, that longevity translates into value: a little goes a long way, and the fragrance is still there at the end of the day.'
+      },
+      {
+        heading: 'Presentation Matters',
+        body: 'Because perfume is about atmosphere, the way it arrives is part of the gift. A well-designed bottle, considered packaging, and a short handwritten note about why you chose it turn a product into something personal. Independent fragrance houses often put real thought into this, and it shows.'
+      },
+      {
+        heading: 'A Gift Idea From Ethereal Charm',
+        body: 'Ethereal Charm is a gender-neutral parfum built on a base of sandalwood, amber, and musk with a heart of rose absolute and iris. It is offered in a 25 ml size and a 10 ml mini, the mini being a low-risk way to introduce someone to the scent. It is warm, close to the skin, and designed to suit a wide range of people.'
+      }
+    ],
+    faq: [
+      {
+        question: 'How do you choose perfume as a gift for someone you do not know well?',
+        answer: 'Choose a versatile, gender-neutral fragrance with a balanced profile, such as woods, amber, musk, and soft florals, and consider a smaller size so the recipient can try it before committing to a full bottle.'
+      },
+      {
+        question: 'Is it better to give a mini or a full-size perfume?',
+        answer: 'A mini is a lower-risk way to introduce someone to a fragrance, especially if you are unsure of their taste. A full-size bottle suits someone whose preferences you already know well.'
+      },
+      {
+        question: 'Does perfume smell the same on everyone?',
+        answer: 'No. Skin chemistry, temperature, and diet all affect how a fragrance develops, so the same perfume can smell noticeably different from one person to another.'
+      }
+    ]
+  },
+  {
+    slug: 'how-to-test-perfume',
+    title: 'How to Test Perfume Properly (and Why the Paper Strip Lies)',
+    excerpt: 'Most people choose perfume in about thirty seconds, standing at a counter with a paper strip. That is the fastest way to buy a fragrance you regret. Here is how to test a perfume properly, and what to look for as it develops through the day.',
+    date: '12 September 2026',
+    category: 'Guide',
+    readTime: '5 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&q=80',
+    content: [
+      {
+        heading: 'Why the First Spray Is Misleading',
+        body: 'A fragrance is built in layers. The top notes you smell in the first few minutes are the lightest and most volatile, and they fade quickly. The heart and base, which are what you actually live with, only appear later. Judging a perfume by its opening is like judging a book by its first sentence: informative, but not the whole story.'
+      },
+      {
+        heading: 'Skip the Paper Strip When You Can',
+        body: 'Blotter strips are useful for narrowing a shortlist, but they do not react with your skin. Because body heat and natural oils change how a fragrance develops, the only reliable test is on your own skin. Use the strip to rule things out, then wear the finalists.'
+      },
+      {
+        heading: 'Test on Skin, Not on Clothes',
+        body: 'Apply a single spray to the inside of the wrist or the inner elbow, where the skin is warm and the pulse is close to the surface. Avoid rubbing your wrists together, which bruises the top notes and changes the way the scent opens. Test one fragrance per arm at most, so the scents do not blur together.'
+      },
+      {
+        heading: 'Give It Time to Develop',
+        body: 'Wait at least fifteen to twenty minutes before forming an opinion, and ideally wear it for several hours. Check in at the start, again after an hour, and again after the fragrance has settled into its base. A scent you love at hour three is a far better indicator than one you like in the first minute.'
+      },
+      {
+        heading: 'Do Not Test Too Many at Once',
+        body: 'Your nose tires quickly. After three or four fragrances it becomes difficult to distinguish between them. If you are shopping in person, limit yourself to a small number, take breaks, and return another day for a second round rather than trying everything in one visit.'
+      },
+      {
+        heading: 'Notice How It Feels, Not Just How It Smells',
+        body: 'The right fragrance is not just pleasant, it feels like you. Ask yourself whether it suits the way you want to feel most days, whether it sits comfortably rather than overwhelming you, and whether you still enjoy it hours later. Those answers matter more than any list of notes.'
+      },
+      {
+        heading: 'Try Before You Commit to a Full Bottle',
+        body: 'Smaller sizes exist for exactly this reason. A 10 ml mini lets you wear a fragrance through real days, in real weather, before deciding it is your signature. It is a simple, inexpensive way to avoid buying a large bottle that ends up unused.'
+      }
+    ],
+    faq: [
+      {
+        question: 'How long should you wait before deciding on a perfume?',
+        answer: 'Wait at least fifteen to twenty minutes for the heart notes to appear, and ideally wear it for a few hours so you can experience the base, which is what stays on skin the longest.'
+      },
+      {
+        question: 'Why does perfume smell different on my skin than on a paper strip?',
+        answer: 'A paper strip does not react with body heat or natural skin oils, both of which change how a fragrance develops. Testing on your own skin gives the most accurate impression.'
+      },
+      {
+        question: 'How many perfumes can you test at once?',
+        answer: 'Most people can only reliably distinguish three or four fragrances before the nose tires. It is better to test a few, take a break, and return later.'
+      }
+    ]
+  },
+  {
+    slug: 'rose-and-iris-perfume',
+    title: 'Rose and Iris in Perfume: Why Powdery Florals Are Having a Moment',
+    excerpt: 'Rose has always been perfumery\'s most loved flower, and iris is one of its most precious ingredients. Together they create a soft, powdery, quietly luxurious character that is finding a new audience. Here is what these two notes are, and why they pair so well.',
+    date: '5 September 2026',
+    category: 'Craft',
+    readTime: '5 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1200&q=80',
+    content: [
+      {
+        heading: 'Rose: The Most Enduring Note in Perfumery',
+        body: 'Rose has featured in fragrance for centuries, and it remains a cornerstone of modern perfumery. Rose absolute, extracted from the petals, carries a richer, deeper, more complex character than lighter rose accords, with facets that can read as honeyed, spicy, fruity, or green depending on how it is used. Far from being old-fashioned, it is one of the most versatile materials a perfumer has.'
+      },
+      {
+        heading: 'Iris: Powder, Suede, and Quiet Elegance',
+        body: 'Iris in perfumery comes from the root of the plant rather than the flower, and it is prized for a smooth, powdery, slightly earthy character often described as cool, elegant, and suede-like. It is among the most costly natural materials in fragrance, which is part of why it signals refinement. Where rose brings warmth and emotion, iris brings restraint and polish.'
+      },
+      {
+        heading: 'Why Rose and Iris Work So Well Together',
+        body: 'The pairing balances contrast. Rose can be lush and expressive; iris softens it with a dry, powdery calm, so the result feels sophisticated rather than sweet. Together they create a floral that reads as modern and grown-up, closer to a beautifully cut fabric than a bouquet.'
+      },
+      {
+        heading: 'Why Powdery Florals Are Returning',
+        body: 'After years dominated by fruity and gourmand fragrances, there is renewed interest in scents that feel calm, polished, and timeless. Powdery florals fit naturally alongside the wider move toward quiet luxury and skin-close fragrance, offering comfort and elegance without volume.'
+      },
+      {
+        heading: 'How Rose and Iris Behave With a Warm Base',
+        body: 'Set over a base of sandalwood, amber, and musk, rose and iris gain depth and staying power. The woods and amber add warmth beneath the florals, and the musk softens everything into the skin, so the fragrance evolves gradually rather than fading after the top notes disappear.'
+      },
+      {
+        heading: 'Rose and Iris at the Heart of Ethereal Charm',
+        body: 'Ethereal Charm uses rose absolute and iris as its heart notes, resting on a base of sandalwood, amber, and musk. The florals provide presence and elegance, while the base keeps the fragrance warm and close to the skin, worn at parfum concentration for depth and longevity.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What does iris smell like in perfume?',
+        answer: 'Iris smells powdery, smooth, and slightly earthy, often described as cool and suede-like. It comes from the root of the plant rather than the flower and is one of the most valued materials in perfumery.'
+      },
+      {
+        question: 'What is the difference between rose absolute and rose accord?',
+        answer: 'Rose absolute is extracted directly from rose petals and has a richer, more complex character. A rose accord is a blend built to recreate the impression of rose, and it can be lighter and more uniform.'
+      },
+      {
+        question: 'Are powdery florals suitable for all genders?',
+        answer: 'Yes. Powdery florals, especially when paired with woods and musk, are widely worn regardless of gender, and many of the most popular modern fragrances blend them into balanced, gender-neutral compositions.'
+      }
+    ]
+  },
+  {
+    slug: 'warm-fragrances-for-cooler-weather',
+    title: 'Warm Fragrances for Cooler Weather: How to Build Your Autumn Scent',
+    excerpt: 'As the days cool, lighter citrus and marine scents give way to something richer. Warm fragrances built on amber, woods, and musk come into their own when the temperature drops. Here is how to choose and wear them well.',
+    date: '29 August 2026',
+    category: 'Trends',
+    readTime: '4 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1638295916768-459f6cf440bc?w=1200&q=80',
+    content: [
+      {
+        heading: 'Why Fragrance Changes With the Weather',
+        body: 'Heat amplifies fragrance, so light, fresh scents feel right in warm weather, where a heavier perfume can become overpowering. As temperatures fall, the opposite is true: cooler air dampens projection, and richer, deeper compositions have the room to develop without becoming heavy.'
+      },
+      {
+        heading: 'The Notes That Define a Cooler-Weather Scent',
+        body: 'Amber, sandalwood, and other woods provide warmth and structure. Musk adds softness and skin-like comfort. Vanilla and resins bring depth, while a touch of spice can add energy. These materials feel especially natural alongside knitwear, layered clothing, and longer evenings.'
+      },
+      {
+        heading: 'Concentration Matters More in the Cold',
+        body: 'Because cooler weather reduces how much a scent projects, a higher concentration helps. Parfum carries more fragrance oil than lighter concentrations, so it holds its character throughout the day even when the air is cool and skin is less warm.'
+      },
+      {
+        heading: 'Where to Apply for the Best Effect',
+        body: 'Apply to pulse points such as the wrists, the base of the throat, and behind the ears, where body warmth gently releases the fragrance. In colder weather you can also apply to areas that are covered by clothing, letting the scent drift out softly as you move.'
+      },
+      {
+        heading: 'Layering for Depth',
+        body: 'Cooler months suit layering. A single warm fragrance can be built up gradually, with an unscented body lotion beneath to help it last. Keep it simple: too many competing scents can muddy the result, while one well-balanced perfume feels intentional and refined.'
+      },
+      {
+        heading: 'A Warm Choice: Ethereal Charm',
+        body: 'Ethereal Charm is built on sandalwood, amber, and musk, with rose absolute and iris at its heart. It is warm, close to the skin, and worn at parfum concentration, which makes it well suited to cooler days.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What are the best perfume notes for cooler weather?',
+        answer: 'Amber, sandalwood and other woods, musk, vanilla, and resins are the classic choices, because their warmth and depth develop well in cooler air.'
+      },
+      {
+        question: 'Should you wear a stronger perfume in cold weather?',
+        answer: 'Cooler air reduces how much a fragrance projects, so richer compositions and higher concentrations such as parfum tend to perform better than lighter ones.'
+      },
+      {
+        question: 'Where should you apply perfume in colder weather?',
+        answer: 'Pulse points such as the wrists and base of the throat work well, since body warmth helps release the fragrance. Applying near clothing can also let the scent drift out gently.'
+      }
+    ]
+  },
+  {
     slug: 'skin-scent-trend-2026',
     title: 'Skin Scents: Why the Biggest Fragrance Trend of 2026 Is Barely There',
     excerpt: 'The loudest fragrance trend right now is the quietest one. Skin scents (warm, musky, close-to-body fragrances designed to smell like "you, but better") have taken over social feeds and perfume counters alike. Here is why the trend is not just marketing, and what actually makes a scent read as "skin".',
