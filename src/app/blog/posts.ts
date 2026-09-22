@@ -13,6 +13,160 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'perfume-and-moisturiser',
+    title: 'Perfume and Moisturiser: The Right Order for Fragrance That Lasts',
+    excerpt: 'Skincare and fragrance interact more than most people realise. Get the order wrong and a great perfume fades in an hour. Here is how to layer moisturiser and perfume so each one works with the other, not against it.',
+    date: '22 September 2026',
+    category: 'Guide',
+    readTime: '4 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&q=80',
+    content: [
+      {
+        heading: 'Why Skincare Affects How Long Perfume Lasts',
+        body: 'Fragrance clings to moisture. Dry skin has fewer oils and less hydration to hold onto fragrance molecules, so perfume applied to bare, dry skin tends to evaporate faster and sit closer to the surface. A well-hydrated base gives a fragrance something to bind to, which is why the same perfume can last visibly longer on well-moisturised skin than on dry skin.'
+      },
+      {
+        heading: 'Moisturiser First, Then Perfume',
+        body: 'The general rule is to let skincare absorb before applying fragrance. Apply moisturiser, wait a few minutes for it to sink in, then spray perfume over it. Applying perfume onto skin that is still wet with lotion can dilute and distort the opening, changing how the top notes read. A brief pause lets the moisturiser do its job without interfering with the fragrance sitting on top.'
+      },
+      {
+        heading: 'Unscented Moisturiser Preserves the Fragrance You Chose',
+        body: 'A heavily scented body lotion competes with perfume rather than supporting it, often muddying both scents into something neither was designed to be. An unscented or very lightly scented moisturiser creates a neutral, hydrated base that lets the perfume you chose come through as intended, rather than mixing with a second, unrelated fragrance.'
+      },
+      {
+        heading: 'Active Ingredients and Fragrance Do Not Always Mix Well',
+        body: 'Retinol, exfoliating acids, and other active skincare ingredients can leave skin more reactive, and layering strong fragrance directly over freshly treated skin increases the chance of irritation. Where possible, apply perfume to areas that have not just been treated with actives, such as clothing-covered pulse points, or wait until the skincare routine has fully settled.'
+      },
+      {
+        heading: 'Where to Layer for the Best Effect',
+        body: 'Pulse points such as the wrists, the base of the throat, and behind the ears carry natural warmth that helps release fragrance gradually throughout the day. Moisturising these specific areas before applying perfume, rather than relying on a single all-over lotion, is a simple way to extend how long a scent stays noticeable.'
+      },
+      {
+        heading: 'A Fragrance Built to Reward This Approach',
+        body: 'Ethereal Charm is formulated at parfum concentration, with a base of sandalwood, amber, and musk that already sits close to the skin. Applied over a well-moisturised, unscented base, it holds its warmth and depth for hours rather than fading with the top notes.'
+      }
+    ],
+    faq: [
+      {
+        question: 'Should you put perfume on before or after moisturiser?',
+        answer: 'Apply moisturiser first and let it absorb for a few minutes, then apply perfume. This gives the fragrance a hydrated base to hold onto without diluting or distorting the opening notes.'
+      },
+      {
+        question: 'Does moisturised skin make perfume last longer?',
+        answer: 'Yes. Fragrance molecules bind better to hydrated skin than to dry skin, so a well-moisturised base generally helps a perfume last longer and develop more evenly.'
+      },
+      {
+        question: 'Can you wear perfume over scented body lotion?',
+        answer: 'It is better to use an unscented or lightly scented lotion underneath perfume, since a strongly scented lotion can mix with the fragrance and change how it smells.'
+      }
+    ]
+  },
+  {
+    slug: 'skinification-of-fragrance',
+    title: 'The Skinification of Fragrance: When Perfume Borrows From Skincare',
+    excerpt: 'Fragrance and skincare used to sit in separate categories. That line is disappearing. Serums with scent, mists with hyaluronic acid, and perfumes marketed on skin feel are all part of a trend perfumers call "skinification". Here is what it means and why it matters.',
+    date: '20 September 2026',
+    category: 'Trends',
+    readTime: '5 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=1200&q=80',
+    content: [
+      {
+        heading: 'What "Skinification" Means',
+        body: 'Skinification describes the growing overlap between skincare and fragrance: perfumes formulated to feel like a light layer on skin rather than a cloud around it, and skincare products that borrow fine-fragrance language and materials. The result is a category of products that sit between the two, judged as much by how they feel and how they interact with skin as by how they smell.'
+      },
+      {
+        heading: 'Why the Two Categories Are Converging',
+        body: 'Consumers increasingly think about fragrance the way they think about skincare: as something personal, close to the body, and part of a daily ritual rather than an occasional statement. Skin scents, discussed as a fragrance trend in their own right, are really the fragrance side of this same shift toward products that feel like an extension of the skin rather than something applied on top of it.'
+      },
+      {
+        heading: 'Ingredients Doing Double Duty',
+        body: 'Materials such as ambrette, cashmeran, and white musks read as warm and skin-like in a fragrance context, which is part of why they now appear so often in scented body mists and lotions positioned alongside skincare. The overlap works because these materials were always chosen to flatter skin rather than sit apart from it, which is exactly what skincare-adjacent fragrance products need.'
+      },
+      {
+        heading: 'What This Means for How Perfume Is Applied',
+        body: 'As fragrance moves closer to skincare, application habits are shifting too. Layering perfume over hydrated skin, choosing formulas that develop gradually rather than announce themselves, and thinking about a fragrance the way you would think about a serum, applied thoughtfully rather than sprayed generously, are all part of this same cultural shift.'
+      },
+      {
+        heading: 'The Limits of the Trend',
+        body: 'A perfume is still a perfume. No amount of skincare-style marketing changes the fact that fragrance oils, not active ingredients, are doing the work. The most useful takeaway from skinification is not a new product category, but a reminder that how a fragrance sits on skin, close, warm, and personal, matters as much as what it smells like from a distance.'
+      },
+      {
+        heading: 'Where Ethereal Charm Fits',
+        body: 'Ethereal Charm was built around a warm base of sandalwood, amber, and musk designed to sit close to the skin, with rose absolute and iris adding presence without volume. It fits naturally into a skinification mindset: a fragrance chosen for how it feels to wear, not just how it projects.'
+      }
+    ],
+    faq: [
+      {
+        question: 'What does "skinification of fragrance" mean?',
+        answer: 'It describes the growing overlap between skincare and perfume, where fragrances are designed to feel like a close, skin-like layer and skincare products borrow materials and language from fine fragrance.'
+      },
+      {
+        question: 'Is skinification the same as a "skin scent"?',
+        answer: 'They are closely related. A skin scent is a fragrance style built to sit close to the skin, while skinification is the broader trend of fragrance and skincare converging across formulation and marketing.'
+      },
+      {
+        question: 'Why are musks and woods common in skinification-style products?',
+        answer: 'Materials such as ambrette, cashmeran, and white musks are chosen because they mimic or flatter the natural warmth of skin, which suits both skin-scent perfumes and skincare-adjacent scented products.'
+      }
+    ]
+  },
+  {
+    slug: 'fragrance-sensitive-skin',
+    title: 'Fragrance and Sensitive Skin: How to Wear Perfume Without Irritation',
+    excerpt: 'Loving fragrance and having sensitive skin are not mutually exclusive, but they do require a bit more care. Here is how to enjoy perfume without the redness, itching, or breakouts that can come from wearing it the wrong way.',
+    date: '16 September 2026',
+    category: 'Guide',
+    readTime: '5 min read',
+    author: 'Ethereal Charm',
+    image: 'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=1200&q=80',
+    content: [
+      {
+        heading: 'Why Perfume Can Irritate Sensitive Skin',
+        body: 'Fragrance is made up of many aromatic compounds, some of which can trigger irritation on skin that is already reactive, dry, or compromised. This is not unique to any one brand or price point; it is a function of how sensitive skin responds to concentrated ingredients generally, whether from skincare actives or fragrance oils.'
+      },
+      {
+        heading: 'Patch Test Before You Commit',
+        body: 'Before wearing a new fragrance for a full day, apply a small amount to an inconspicuous area, such as the inside of the elbow, and wait 24 hours. This is the same principle used for testing a new skincare product, and it applies just as usefully to perfume, especially for anyone with a history of reactions to fragranced products.'
+      },
+      {
+        heading: 'Apply to Clothing Rather Than Skin When Needed',
+        body: 'If direct skin contact tends to cause irritation, spraying fragrance onto clothing or hair rather than skin is a straightforward workaround. It will not last quite as long as skin application, but it avoids direct contact while still letting you enjoy the fragrance throughout the day.'
+      },
+      {
+        heading: 'Avoid Layering Fragrance Over Freshly Treated Skin',
+        body: 'Skin that has just been exfoliated, treated with retinol, or otherwise made more permeable is more likely to react to fragrance applied directly on top. Giving an active skincare routine time to settle, or choosing a different application area, reduces the chance of a reaction.'
+      },
+      {
+        heading: 'Choose Formulas Built to Sit Close, Not Loud',
+        body: 'Fragrances built around warm, skin-like materials such as sandalwood, amber, and soft musks tend to be worn more comfortably by people with sensitive skin than sharp, high-projection formulas heavy in citrus or aldehydes, simply because they are usually applied more sparingly and sit closer to the skin rather than being sprayed liberally.'
+      },
+      {
+        heading: 'When to See a Dermatologist',
+        body: 'Occasional mild redness that fades quickly is common and not usually a concern. Persistent itching, swelling, or a rash that spreads beyond the application site is worth discussing with a dermatologist, who can help identify whether a specific ingredient is responsible.'
+      },
+      {
+        heading: 'A Considered Choice for Sensitive Skin',
+        body: 'Ethereal Charm is built on a warm base of sandalwood, amber, and musk with rose absolute and iris at the heart, designed to be worn close to the skin rather than sprayed heavily. As with any fragrance, anyone with known sensitivities should patch test first.'
+      }
+    ],
+    faq: [
+      {
+        question: 'Can you wear perfume if you have sensitive skin?',
+        answer: 'Yes, in most cases, but it helps to patch test new fragrances, apply sparingly, and avoid layering perfume directly over freshly treated or irritated skin.'
+      },
+      {
+        question: 'Is it better to spray perfume on skin or clothing for sensitive skin?',
+        answer: 'Spraying onto clothing or hair avoids direct skin contact and can be a useful workaround for anyone prone to irritation, though the scent will not last quite as long as it would on skin.'
+      },
+      {
+        question: 'How do you patch test a new perfume?',
+        answer: 'Apply a small amount to an inconspicuous area, such as the inside of the elbow, and wait 24 hours to check for redness, itching, or any other reaction before wearing it more broadly.'
+      }
+    ]
+  },
+  {
     slug: 'perfume-gift-guide',
     title: 'The Perfume Gift Guide: How to Choose a Fragrance for Someone Else',
     excerpt: 'Buying perfume for another person is one of the hardest gifts to get right, and one of the most memorable when you do. Here is a simple, practical way to choose a fragrance for someone else, without guessing or relying on the loudest bestseller.',
