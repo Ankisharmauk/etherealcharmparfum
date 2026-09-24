@@ -53,7 +53,7 @@ export default function CartDrawer() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[#2C1A06] text-sm font-light truncate" style={{ fontFamily: 'var(--font-display)' }}>{product.name}</p>
-                  <p className="text-[#C9920E] text-xs mt-0.5">${product.price.toFixed(2)}</p>
+                  <p className="text-[#C9920E] text-xs mt-0.5">A${product.price.toFixed(2)}</p>
                   <div className="flex items-center gap-3 mt-3">
                     <button onClick={() => updateQty(product.id, quantity - 1)}
                       className="w-6 h-6 border border-[#C9920E]/25 flex items-center justify-center text-[#2C1A06]/50 hover:border-[#C9920E] hover:text-[#C9920E] transition-colors">
@@ -78,7 +78,7 @@ export default function CartDrawer() {
           <div className="px-6 py-6 border-t border-[#C9920E]/15 space-y-4 bg-[#FBF4E3]">
             <div className="flex justify-between text-sm">
               <span className="text-[#2C1A06]/50 tracking-wider" style={{ fontFamily: 'var(--font-sans)' }}>Subtotal</span>
-              <span className="text-[#2C1A06]" style={{ fontFamily: 'var(--font-display)' }}>${total.toFixed(2)}</span>
+              <span className="text-[#2C1A06]" style={{ fontFamily: 'var(--font-display)' }}>A${total.toFixed(2)}</span>
             </div>
             <p className="text-[#2C1A06]/30 text-xs" style={{ fontFamily: 'var(--font-sans)' }}>Shipping calculated at checkout</p>
             <button onClick={handleCheckout}

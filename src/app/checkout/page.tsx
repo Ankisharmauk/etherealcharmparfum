@@ -62,7 +62,7 @@ export default function CheckoutPage() {
                   </div>
                   <div className="text-right">
                     <p className="text-[#2C1A06]/40 text-xs mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Qty: {quantity}</p>
-                    <p className="text-[#C9920E] text-sm" style={{ fontFamily: 'var(--font-display)' }}>${(product.price * quantity).toFixed(2)}</p>
+                    <p className="text-[#C9920E] text-sm" style={{ fontFamily: 'var(--font-display)' }}>A${(product.price * quantity).toFixed(2)}</p>
                   </div>
                 </div>
               ))}
@@ -79,13 +79,13 @@ export default function CheckoutPage() {
                 {items.map(({ product, quantity }) => (
                   <div key={product.id} className="flex justify-between text-[#2C1A06]/50">
                     <span style={{ fontFamily: 'var(--font-sans)' }}>{product.name} × {quantity}</span>
-                    <span style={{ fontFamily: 'var(--font-display)' }}>${(product.price * quantity).toFixed(2)}</span>
+                    <span style={{ fontFamily: 'var(--font-display)' }}>A${(product.price * quantity).toFixed(2)}</span>
                   </div>
                 ))}
               </div>
               <div className="border-t border-[#C9920E]/20 pt-4 flex justify-between items-baseline mb-8">
                 <span className="text-[#2C1A06]/50 text-xs tracking-widest uppercase" style={{ fontFamily: 'var(--font-sans)' }}>Total</span>
-                <span className="text-[#2C1A06] text-xl" style={{ fontFamily: 'var(--font-display)' }}>${total.toFixed(2)}</span>
+                <span className="text-[#2C1A06] text-xl" style={{ fontFamily: 'var(--font-display)' }}>A${total.toFixed(2)}</span>
               </div>
               <p className="text-[#2C1A06]/35 text-xs mb-6 text-center" style={{ fontFamily: 'var(--font-sans)' }}>
                 Shipping &amp; taxes calculated by Stripe

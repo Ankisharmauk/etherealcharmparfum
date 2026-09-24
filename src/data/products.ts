@@ -20,7 +20,7 @@ export const products: Product[] = [
     slug: 'mini-ethereal-charm',
     name: 'The Mini Ethereal Charm',
     subtitle: 'Parfum · 10 ml',
-    price: 25,
+    price: 59,
     size: '10ml',
     description: 'A pocket-sized introduction to the world of Ethereal Charm.',
     longDescription:
@@ -44,8 +44,7 @@ export const products: Product[] = [
     slug: 'ethereal-charm-25ml',
     name: 'The Ethereal Charm',
     subtitle: 'Parfum · 25 ml',
-    price: 66,
-    comparePrice: 110,
+    price: 119,
     size: '25ml',
     description: 'The full expression. A luxurious, long-lasting parfum made in London.',
     longDescription:

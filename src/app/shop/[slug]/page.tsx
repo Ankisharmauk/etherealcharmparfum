@@ -75,20 +75,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
             <div className="flex items-baseline gap-4 mb-8">
               <span style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: GOLD }}>
-                ${product.price}
+                A${product.price}
               </span>
-              {product.comparePrice && (
-                <>
-                  <span style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', color: 'rgba(245,223,160,0.28)', textDecoration: 'line-through' }}>
-                    ${product.comparePrice}
-                  </span>
-                  <span
-                    style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: GOLD, border: '1px solid rgba(201,146,14,0.3)', padding: '3px 8px', letterSpacing: '0.1em' }}
-                  >
-                    Save ${product.comparePrice - product.price}
-                  </span>
-                </>
-              )}
             </div>
 
             <p className="leading-relaxed mb-10" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'rgba(245,223,160,0.58)', textAlign: 'justify' }}>
@@ -165,7 +153,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   </div>
                   <div>
                     <p className="font-light mb-1" style={{ fontFamily: 'var(--font-display)', fontSize: '18px', color: CREAM }}>{p.name}</p>
-                    <p style={{ fontFamily: 'var(--font-display)', fontSize: '15px', color: GOLD }}>${p.price}</p>
+                    <p style={{ fontFamily: 'var(--font-display)', fontSize: '15px', color: GOLD }}>A${p.price}</p>
                   </div>
                   <span
                     className="ml-auto group-hover:translate-x-1 transition-transform duration-300"

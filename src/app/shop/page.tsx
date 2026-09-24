@@ -106,13 +106,8 @@ export default function ShopPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-baseline gap-3">
                     <span style={{ fontFamily: 'var(--font-display)', fontSize: '22px', color: GOLD }}>
-                      ${product.price}
+                      A${product.price}
                     </span>
-                    {product.comparePrice && (
-                      <span style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'rgba(245,223,160,0.25)', textDecoration: 'line-through' }}>
-                        ${product.comparePrice}
-                      </span>
-                    )}
                   </div>
                   <span
                     className="tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-300"

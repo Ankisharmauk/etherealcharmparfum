@@ -319,8 +319,8 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { name: 'The Mini Ethereal Charm', size: '10 ml', price: '$25', href: '/shop/mini-ethereal-charm', badge: 'Perfect gift' },
-              { name: 'The Ethereal Charm', size: '25 ml', price: '$66', comparePrice: '$110', href: '/shop/ethereal-charm-25ml', badge: 'Limited offer' },
+              { name: 'The Mini Ethereal Charm', size: '10 ml', price: 'A$59', href: '/shop/mini-ethereal-charm', badge: 'Perfect gift' },
+              { name: 'The Ethereal Charm', size: '25 ml', price: 'A$119', href: '/shop/ethereal-charm-25ml', badge: 'Limited offer' },
             ].map((p) => (
               <Link
                 key={p.href}
@@ -348,9 +348,6 @@ export default function HomePage() {
                   <p className="text-[#F5DFA0]/40 text-xs mb-3" style={{ fontFamily: 'var(--font-sans)' }}>{p.size} · Parfum</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-[#C9920E] text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.price}</span>
-                    {p.comparePrice && (
-                      <span className="text-[#F5DFA0]/25 text-sm line-through">{p.comparePrice}</span>
-                    )}
                   </div>
                 </div>
                 <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[#C9920E]/40 group-hover:text-[#C9920E] transition-colors text-xl">→</span>

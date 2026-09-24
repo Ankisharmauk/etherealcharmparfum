@@ -26,7 +26,7 @@ export async function generateMetadata({
     offers: {
       '@type': 'Offer',
       url: `${BASE_URL}/shop/${product.slug}`,
-      priceCurrency: 'GBP',
+      priceCurrency: 'AUD',
       price: product.price,
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
@@ -58,7 +58,7 @@ export async function generateMetadata({
     },
     other: {
       'product:price:amount': String(product.price),
-      'product:price:currency': 'GBP',
+      'product:price:currency': 'AUD',
     },
   }
 }
@@ -85,7 +85,7 @@ export default async function ProductLayout({
     offers: {
       '@type': 'Offer',
       url: `${BASE_URL}/shop/${product.slug}`,
-      priceCurrency: 'GBP',
+      priceCurrency: 'AUD',
       price: product.price,
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
