@@ -6,7 +6,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { useState, use } from 'react'
-import { ShoppingBag, Check } from 'lucide-react'
+import { ShoppingBag, Check, Loader2 } from 'lucide-react'
+import {
+  SUBSCRIPTION_INTERVALS,
+  SUBSCRIPTION_DISCOUNT_PERCENT,
+  DEFAULT_SUBSCRIPTION_MONTHS,
+  subscriptionPrice,
+  type SubscriptionMonths,
+} from '@/data/subscription'
 
 const GOLD = '#C9920E'
 const CREAM = '#F5DFA0'
@@ -16,8 +23,40 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const product = getProductBySlug(slug)
   const { add } = useCart()
   const [added, setAdded] = useState(false)
+  const [mode, setMode] = useState<'once' | 'subscribe'>('once')
+  const [months, setMonths] = useState<SubscriptionMonths>(DEFAULT_SUBSCRIPTION_MONTHS)
+  const [subLoading, setSubLoading] = useState(false)
+  const [subError, setSubError] = useState('')
 
   if (!product) notFound()
+
+  const subPrice = subscriptionPrice(product)
+  const interval = SUBSCRIPTION_INTERVALS.find((i) => i.months === months)!
+  const renewal = new Date()
+  renewal.setMonth(renewal.getMonth() + months)
+  const nextRenewal = renewal.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })
+
+  const handleSubscribe = async () => {
+    setSubLoading(true)
+    setSubError('')
+    try {
+      const res = await fetch('/api/subscription-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: product.id, months }),
+      })
+      const data = await res.json()
+      if (data.url) {
+        window.location.assign(data.url)
+      } else {
+        setSubError('Subscriptions are not available right now. Please try again soon.')
+      }
+    } catch {
+      setSubError('Something went wrong. Please try again.')
+    } finally {
+      setSubLoading(false)
+    }
+  }
 
   const handleAdd = () => {
     add(product)
@@ -106,19 +145,101 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               ))}
             </ul>
 
-            {/* Add to cart */}
-            <button
-              onClick={handleAdd}
-              className="w-full py-4 flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-medium transition-all duration-300"
-              style={{
-                fontFamily: 'var(--font-sans)',
-                background: added ? 'rgba(201,146,14,0.1)' : GOLD,
-                color: added ? GOLD : '#0D0804',
-                border: added ? `1px solid rgba(201,146,14,0.4)` : 'none',
-              }}
-            >
-              {added ? <><Check size={14} /> Added to Bag</> : <><ShoppingBag size={14} /> Add to Bag</>}
-            </button>
+            {/* Purchase options */}
+            <div className="grid grid-cols-2 gap-3 mb-6" role="radiogroup" aria-label="Purchase option">
+              {([
+                { value: 'once', title: 'One-time purchase', price: `A$${product.price}` },
+                { value: 'subscribe', title: `Subscribe and save ${SUBSCRIPTION_DISCOUNT_PERCENT}%`, price: `A$${subPrice.toFixed(2)}` },
+              ] as const).map((opt) => {
+                const active = mode === opt.value
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => setMode(opt.value)}
+                    className="text-left p-4 transition-all duration-300"
+                    style={{
+                      background: active ? 'rgba(201,146,14,0.1)' : 'rgba(201,146,14,0.03)',
+                      border: `1px solid ${active ? GOLD : 'rgba(201,146,14,0.2)'}`,
+                    }}
+                  >
+                    <span className="block" style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: active ? GOLD : 'rgba(245,223,160,0.55)' }}>
+                      {opt.title}
+                    </span>
+                    <span className="block mt-2" style={{ fontFamily: 'var(--font-display)', fontSize: '20px', color: CREAM }}>
+                      {opt.price}
+                    </span>
+                  </button>
+                )
+              })}
+            </div>
+
+            {mode === 'once' ? (
+              <button
+                onClick={handleAdd}
+                className="w-full py-4 flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-medium transition-all duration-300"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  background: added ? 'rgba(201,146,14,0.1)' : GOLD,
+                  color: added ? GOLD : '#0D0804',
+                  border: added ? `1px solid rgba(201,146,14,0.4)` : 'none',
+                }}
+              >
+                {added ? <><Check size={14} /> Added to Bag</> : <><ShoppingBag size={14} /> Add to Bag</>}
+              </button>
+            ) : (
+              <div>
+                <label className="block mb-2" htmlFor="sub-frequency" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(245,223,160,0.45)' }}>
+                  Delivery frequency
+                </label>
+                <select
+                  id="sub-frequency"
+                  value={months}
+                  onChange={(e) => setMonths(Number(e.target.value) as SubscriptionMonths)}
+                  className="w-full p-3 mb-5"
+                  style={{ fontFamily: 'var(--font-sans)', fontSize: '13px', background: '#130900', color: CREAM, border: '1px solid rgba(201,146,14,0.3)' }}
+                >
+                  {SUBSCRIPTION_INTERVALS.map((i) => (
+                    <option key={i.months} value={i.months}>{i.label}</option>
+                  ))}
+                </select>
+
+                {/* Subscription terms */}
+                <div
+                  className="mb-5 p-5"
+                  style={{ background: 'rgba(201,146,14,0.04)', border: '1px solid rgba(201,146,14,0.18)' }}
+                >
+                  <p className="tracking-widest uppercase mb-3" style={{ fontFamily: 'var(--font-sans)', fontSize: '9px', color: 'rgba(245,223,160,0.38)' }}>
+                    Subscription terms
+                  </p>
+                  <ul className="space-y-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', lineHeight: '19px', color: 'rgba(245,223,160,0.6)' }}>
+                    <li>
+                      <strong style={{ color: CREAM, fontWeight: 400 }}>A${subPrice.toFixed(2)}</strong> per delivery, {interval.short}. That is {SUBSCRIPTION_DISCOUNT_PERCENT}% off the one-time price of A${product.price}.
+                    </li>
+                    <li>You are charged today, then automatically {interval.short}. Your next renewal is on <span suppressHydrationWarning>{nextRenewal}</span>.</li>
+                    <li>It continues until you cancel. There is no minimum commitment.</li>
+                    <li>
+                      Cancel, change size or change frequency any time on the{' '}
+                      <Link href="/subscription" style={{ color: GOLD, textDecoration: 'underline' }}>Manage Subscription</Link>{' '}
+                      page. A cancellation applies from the end of your current period, so there are no further charges.
+                    </li>
+                    <li>Need to skip or pause a delivery? Email info@theetherealcharm.com before your renewal date.</li>
+                  </ul>
+                </div>
+
+                {subError && <p className="mb-4 text-center" style={{ color: '#E26B6B', fontSize: '12px' }}>{subError}</p>}
+                <button
+                  onClick={handleSubscribe}
+                  disabled={subLoading}
+                  className="w-full py-4 flex items-center justify-center gap-3 text-xs tracking-[0.2em] uppercase font-medium transition-all duration-300 disabled:opacity-50"
+                  style={{ fontFamily: 'var(--font-sans)', background: GOLD, color: '#0D0804' }}
+                >
+                  {subLoading ? <><Loader2 size={14} className="animate-spin" /> Processing…</> : <>Subscribe · A${subPrice.toFixed(2)} {interval.short}</>}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>

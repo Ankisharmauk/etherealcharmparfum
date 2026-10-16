@@ -36,6 +36,33 @@ export default function MediaPage() {
       {/* Content */}
       <div className="max-w-2xl mx-auto px-6 md:px-12 py-24">
 
+        {/* As featured in */}
+        <div className="mb-16">
+          <p className="tracking-[0.25em] uppercase mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', color: GOLD }}>
+            As Featured In
+          </p>
+          <a
+            href="https://lamaisonculture.com/Article?slug=ankita-sharma-crafting-scent-story-and-modern-luxury"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-6 transition-colors hover:bg-[rgba(201,146,14,0.08)]"
+            style={{ background: 'rgba(201,146,14,0.04)', border: '1px solid rgba(201,146,14,0.2)', borderLeft: '2px solid rgba(201,146,14,0.5)' }}
+          >
+            <p className="mb-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(245,223,160,0.45)' }}>
+              La Maison Culture
+            </p>
+            <p style={{ fontFamily: 'var(--font-display)', fontSize: '20px', color: CREAM, fontWeight: 300, marginBottom: '6px' }}>
+              Ankita Sharma: Crafting Scent, Story and Modern Luxury
+            </p>
+            <time dateTime="2026-03-09" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', color: 'rgba(245,223,160,0.4)' }}>
+              9 March 2026
+            </time>
+            <span className="block mt-4" style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD }}>
+              Read the feature →
+            </span>
+          </a>
+        </div>
+
         {/* Contact block */}
         <div
           className="mb-16 p-10 text-center"

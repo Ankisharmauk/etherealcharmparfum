@@ -254,7 +254,7 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-light text-[#2C1A06] leading-tight mb-16 text-center" style={{ fontFamily: 'var(--font-display)' }}>
             Our Partners
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {[
               {
                 name: 'We Are Slam Society',
@@ -276,6 +276,13 @@ export default function HomePage() {
                 body: 'Ethereal Charm partners with The Lollipop Collective, a curated retail community bringing independent businesses together in beautifully presented collective stores and markets.',
                 href: 'https://www.instagram.com/lollipopcollectivemarkets/',
                 cta: 'Follow The Lollipop Collective',
+              },
+              {
+                name: 'Sydney Boutique Markets',
+                place: 'Rouse Hill, Sydney, Australia',
+                body: 'Ethereal Charm partners with Sydney Boutique Markets, a monthly pop-up market in Rouse Hill giving emerging designers and independent retailers a platform to reach shoppers.',
+                href: 'https://www.sydneyboutiquemarkets.com.au/',
+                cta: 'Visit Sydney Boutique Markets',
               },
             ].map(({ name, place, body, href, cta }) => (
               <div key={name} className="flex flex-col p-4 md:p-10 bg-white/50 border border-[#C9920E]/25">
@@ -302,6 +309,49 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* As Featured In */}
+      <section className="py-24 bg-[#F5E8C8]">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
+          <p className="text-[#C9920E] tracking-[0.3em] uppercase text-xs mb-4 font-light" style={{ fontFamily: 'var(--font-sans)' }}>
+            Media
+          </p>
+          <h2 className="text-4xl md:text-5xl font-light text-[#2C1A06] leading-tight mb-12" style={{ fontFamily: 'var(--font-display)' }}>
+            As Featured In
+          </h2>
+          <a
+            href="https://lamaisonculture.com/Article?slug=ankita-sharma-crafting-scent-story-and-modern-luxury"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block p-8 md:p-10 bg-white/50 border border-[#C9920E]/25 hover:bg-white/70 transition-colors duration-300"
+          >
+            <div className="w-6 h-px bg-[#C9920E]/60 mx-auto mb-5" />
+            <p className="text-[#2C1A06]/45 text-[10px] md:text-xs tracking-widest uppercase mb-3" style={{ fontFamily: 'var(--font-sans)' }}>
+              La Maison Culture
+            </p>
+            <h3 className="text-xl md:text-3xl font-light text-[#2C1A06] leading-snug mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+              Ankita Sharma: Crafting Scent, Story and Modern Luxury
+            </h3>
+            <time dateTime="2026-03-09" className="block text-[#2C1A06]/50 text-xs mb-6" style={{ fontFamily: 'var(--font-sans)' }}>
+              9 March 2026
+            </time>
+            <span
+              className="inline-flex items-center gap-3 text-[#C9920E] text-[10px] md:text-xs tracking-[0.2em] uppercase pb-1 border-b border-[#C9920E]/40"
+              style={{ fontFamily: 'var(--font-sans)' }}
+            >
+              Read the feature
+              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </span>
+          </a>
+          <Link
+            href="/media"
+            className="inline-block mt-8 text-[#2C1A06]/50 text-[10px] md:text-xs tracking-[0.2em] uppercase hover:text-[#C9920E] transition-colors"
+            style={{ fontFamily: 'var(--font-sans)' }}
+          >
+            Press enquiries →
+          </Link>
         </div>
       </section>
 

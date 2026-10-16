@@ -155,6 +155,20 @@ export default function TermsPage() {
           </P>
         </Section>
 
+        <Section title="7A. Subscriptions">
+          <P>
+            Selected products can be bought as a recurring subscription at 10% off the one-time price. You choose a delivery frequency of every month, every 2 months or every 3 months. You are charged on sign-up and then automatically on each renewal date until you cancel.
+          </P>
+          <P>
+            You can cancel, change size or change frequency at any time on our{' '}
+            <Link href="/subscription" style={{ color: GOLD }}>Manage Subscription</Link>{' '}
+            page. A cancellation takes effect at the end of your current billing period and no further charges are made. To skip or pause a delivery, email info@theetherealcharm.com before your renewal date. We may change subscription pricing with reasonable notice before your next renewal.
+          </P>
+          <P>
+            Section 7 applies to each delivery. Nothing in these terms limits your rights under the Australian Consumer Law.
+          </P>
+        </Section>
+
         <Section title="8. Intellectual Property">
           <P>
             All content on this website — including but not limited to text, images, graphics, logo, brand name, and fragrance formulations — is the intellectual property of Ethereal Charm and is protected by copyright and other applicable laws. Nothing on this website grants you a licence or right to use any intellectual property without our prior written consent.
