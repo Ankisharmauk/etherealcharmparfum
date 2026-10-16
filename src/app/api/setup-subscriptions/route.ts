@@ -24,10 +24,22 @@ function tokenMatches(supplied: string | null, expected: string): boolean {
 }
 
 export async function GET(req: NextRequest) {
+  // TEMPORARY diagnostics: say why a request was refused. Remove with SETUP_TOKEN.
   const expected = process.env.SETUP_TOKEN
-  if (!expected) return new NextResponse('Not found', { status: 404 })
-  if (!tokenMatches(req.nextUrl.searchParams.get('token'), expected)) {
-    return new NextResponse('Not found', { status: 404 })
+  if (!expected) {
+    return NextResponse.json({ ok: false, reason: 'SETUP_TOKEN is not set on this deployment' }, { status: 404 })
+  }
+  const supplied = req.nextUrl.searchParams.get('token')
+  if (!tokenMatches(supplied, expected)) {
+    return NextResponse.json(
+      {
+        ok: false,
+        reason: 'The token in the address does not match SETUP_TOKEN',
+        receivedLength: supplied?.length ?? 0,
+        sameLengthAsSaved: supplied?.length === expected.length,
+      },
+      { status: 404 },
+    )
   }
 
   const key = process.env.STRIPE_SECRET_KEY
