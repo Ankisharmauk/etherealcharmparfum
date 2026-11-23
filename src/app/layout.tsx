@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     images: [
       {
-        url: '/images/ethereal-charm-bottle.png',
+        url: '/images/bottle.png',
         width: 1200,
         height: 630,
         alt: 'Ethereal Charm — Luxury Gender-Neutral Parfum',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ethereal Charm — Luxury Gender-Neutral Parfum Made in London',
     description: 'A high-concentration gender-neutral parfum handcrafted in London.',
-    images: ['/images/ethereal-charm-bottle.png'],
+    images: ['/images/bottle.png'],
   },
 }
 
@@ -84,7 +84,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Ethereal Charm',
   url: BASE_URL,
-  logo: `${BASE_URL}/images/ethereal-charm-bottle.png`,
+  logo: `${BASE_URL}/images/bottle.png`,
   description: 'A luxury gender-neutral parfum handcrafted in London.',
   foundingLocation: { '@type': 'Place', name: 'London, United Kingdom' },
   taxID: '77 564 307 579',

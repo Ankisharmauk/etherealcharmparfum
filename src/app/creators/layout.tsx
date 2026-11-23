@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     description: 'Share the scent, earn rewards. A simple program for reviewers, content creators and referral partners.',
     url: `${BASE_URL}/creators`,
     type: 'website',
-    images: [{ url: '/images/ethereal-charm-bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum' }],
+    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Creators & Rewards — Ethereal Charm',
     description: 'Share the scent, earn rewards. A simple program for reviewers, content creators and referral partners.',
-    images: ['/images/ethereal-charm-bottle.png'],
+    images: ['/images/bottle.png'],
   },
 }
 

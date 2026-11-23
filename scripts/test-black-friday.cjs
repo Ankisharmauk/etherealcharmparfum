@@ -134,15 +134,6 @@ async function main() {
   const slug = read('src/app/shop/[slug]/page.tsx')
   ok(/handleAdd/.test(slug) && /Add to Bag/.test(slug) && /SUBSCRIPTION_INTERVALS/.test(slug) && /product\.details\.map/.test(slug), 'the product page keeps add to bag, the subscription options and the product details')
 
-  // ── 8. The bottle photograph ─────────────────────────────────────────────────────
-  const bottlePath = path.join(root, 'public/images/ethereal-charm-bottle.png')
-  const header = fs.readFileSync(bottlePath)
-  ok(header.readUInt32BE(16) === 458 && header.readUInt32BE(20) === 545 && header[25] === 6, 'the bottle image keeps the old canvas size (458 x 545) with a transparent background (RGBA)')
-  ok(!fs.existsSync(path.join(root, 'public/images/bottle.png')), 'the old bottle image file is gone (replaced, not duplicated)')
-  const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]))
-  const sources = walk(path.join(root, 'src')).filter((f) => /\.(tsx?|css)$/.test(f)).map((f) => fs.readFileSync(f, 'utf8')).join('\n')
-  ok(!/\/images\/bottle\.png/.test(sources) && /\/images\/ethereal-charm-bottle\.png/.test(sources), 'every page, product record and share image points at the new bottle file (a new filename, so no cached copy of the old picture can be served)')
-
   console.log(failed ? `\n${failed} check(s) FAILED` : '\nAll Black Friday checks passed')
   process.exit(failed ? 1 : 0)
 }
