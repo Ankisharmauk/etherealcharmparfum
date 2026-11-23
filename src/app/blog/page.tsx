@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm — a gender-neutral parfum made in London.',
     url: `${BASE_URL}/blog`,
     type: 'website',
-    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Journal' }],
+    images: [{ url: '/images/ethereal-charm-bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Journal' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ethereal Charm Journal — Fragrance Guides & Perspectives',
     description: 'Fragrance guides, perspectives on luxury scent, and the craft behind Ethereal Charm.',
-    images: ['/images/bottle.png'],
+    images: ['/images/ethereal-charm-bottle.png'],
   },
 }
 

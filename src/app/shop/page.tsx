@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     description: 'Choose from the 10ml Mini or the 25ml signature bottle. Gender-neutral, long-lasting, crafted in London.',
     url: `${BASE_URL}/shop`,
     type: 'website',
-    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum Collection' }],
+    images: [{ url: '/images/ethereal-charm-bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum Collection' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shop Ethereal Charm — Luxury Parfum Collection',
     description: 'Gender-neutral, long-lasting parfum crafted in London. 10ml and 25ml available.',
-    images: ['/images/bottle.png'],
+    images: ['/images/ethereal-charm-bottle.png'],
   },
 }
 

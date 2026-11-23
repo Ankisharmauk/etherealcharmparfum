@@ -114,7 +114,7 @@ export default function AboutPage() {
             <div className="relative z-10 h-full flex items-center justify-center py-10 px-12">
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/bottle.png"
+                  src="/images/ethereal-charm-bottle.png"
                   alt="Ethereal Charm Parfum — crafted in London"
                   fill
                   className="object-contain"
@@ -210,7 +210,7 @@ export default function AboutPage() {
                 className="absolute inset-0"
                 style={{ background: 'radial-gradient(ellipse 60% 70% at 50% 60%, rgba(201,146,14,0.15), transparent)', filter: 'blur(20px)' }}
               />
-              <Image src="/images/bottle.png" alt="Ethereal Charm Parfum" fill className="object-contain relative z-10" />
+              <Image src="/images/ethereal-charm-bottle.png" alt="Ethereal Charm Parfum" fill className="object-contain relative z-10" />
             </div>
           </div>
         </div>

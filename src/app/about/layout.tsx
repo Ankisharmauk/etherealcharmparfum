@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     description: 'The story behind Ethereal Charm — a gender-neutral parfum handcrafted in London with intention and care.',
     url: `${BASE_URL}/about`,
     type: 'website',
-    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum' }],
+    images: [{ url: '/images/ethereal-charm-bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Ethereal Charm — Luxury Parfum Made in London',
     description: 'The story behind Ethereal Charm — a gender-neutral parfum handcrafted in London.',
-    images: ['/images/bottle.png'],
+    images: ['/images/ethereal-charm-bottle.png'],
   },
 }
 
@@ -52,7 +52,7 @@ const brandSchema = {
   '@type': 'Brand',
   name: 'Ethereal Charm',
   url: BASE_URL,
-  logo: `${BASE_URL}/images/bottle.png`,
+  logo: `${BASE_URL}/images/ethereal-charm-bottle.png`,
   description: 'Ethereal Charm is an independent luxury parfum brand. Gender-neutral, high-concentration, handcrafted in London.',
   slogan: 'Discover the Essence of Ethereal Charm',
   founder: {

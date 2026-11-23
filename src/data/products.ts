@@ -36,7 +36,7 @@ export const products: Product[] = [
       'Long-lasting formula — 8 to 12 hours',
       '10 ml spray bottle',
     ],
-    image: '/images/bottle.png',
+    image: '/images/ethereal-charm-bottle.png',
     badge: 'Best for gifting',
   },
   {
@@ -60,7 +60,7 @@ export const products: Product[] = [
       'Long-lasting formula — 8 to 12 hours',
       '25 ml spray bottle',
     ],
-    image: '/images/bottle.png',
+    image: '/images/ethereal-charm-bottle.png',
     badge: 'Limited offer',
   },
 ]

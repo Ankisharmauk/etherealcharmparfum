@@ -176,7 +176,7 @@ export default function HomePage() {
           <div className="flex items-center justify-center">
             <div className="relative w-72 h-96 md:w-80 md:h-[440px]">
               <Image
-                src="/images/bottle.png"
+                src="/images/ethereal-charm-bottle.png"
                 alt="Ethereal Charm Parfum"
                 fill
                 className="object-contain relative z-10"
@@ -208,7 +208,7 @@ export default function HomePage() {
             <div className="relative z-10 h-full flex items-center justify-center py-10 px-12">
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/bottle.png"
+                  src="/images/ethereal-charm-bottle.png"
                   alt="Ethereal Charm Parfum"
                   fill
                   className="object-contain drop-shadow-2xl"
@@ -394,7 +394,7 @@ export default function HomePage() {
                   style={{ background: 'rgba(201,146,14,0.07)' }}
                 />
                 <div className="relative w-20 h-28 shrink-0">
-                  <Image src="/images/bottle.png" alt={p.name} fill className="object-contain" />
+                  <Image src="/images/ethereal-charm-bottle.png" alt={p.name} fill className="object-contain" />
                 </div>
                 <div className="relative">
                   {p.badge && (

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     description: 'A memorable fragrance experience for guest stays, client relationships and special moments.',
     url: `${BASE_URL}/hospitality-gifting`,
     type: 'website',
-    images: [{ url: '/images/bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum' }],
+    images: [{ url: '/images/ethereal-charm-bottle.png', width: 1200, height: 630, alt: 'Ethereal Charm Parfum' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hotels, Spas & Corporate Gifting — Ethereal Charm',
     description: 'A memorable fragrance experience for guest stays, client relationships and special moments.',
-    images: ['/images/bottle.png'],
+    images: ['/images/ethereal-charm-bottle.png'],
   },
 }
 
