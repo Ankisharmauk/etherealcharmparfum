@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getProductBySlug } from '@/data/products'
+import { BLACK_FRIDAY, isPromoActive, unitPrice } from '@/data/promotion'
 
 const BASE_URL = 'https://www.theetherealcharm.com'
 
@@ -57,7 +58,7 @@ export async function generateMetadata({
       images: ['/images/bottle.png'],
     },
     other: {
-      'product:price:amount': String(product.price),
+      'product:price:amount': String(unitPrice(product, isPromoActive(new Date())).price),
       'product:price:currency': 'AUD',
     },
   }
@@ -75,6 +76,9 @@ export default async function ProductLayout({
 
   if (!product) return <>{children}</>
 
+  // The structured-data price is the price a customer pays right now (server clock), with the end of the sale as its validity.
+  const unit = unitPrice(product, isPromoActive(new Date()))
+
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -86,7 +90,8 @@ export default async function ProductLayout({
       '@type': 'Offer',
       url: `${BASE_URL}/shop/${product.slug}`,
       priceCurrency: 'AUD',
-      price: product.price,
+      price: unit.price,
+      ...(unit.onSale ? { priceValidUntil: BLACK_FRIDAY.endsAt } : {}),
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@type': 'Organization', name: 'Ethereal Charm' },

@@ -4,6 +4,7 @@ import { useCart } from '@/context/CartContext'
 import { X, Minus, Plus, Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import LivePrice from '@/components/LivePrice'
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, remove, updateQty, total, count } = useCart()
@@ -53,7 +54,7 @@ export default function CartDrawer() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[#2C1A06] text-sm font-light truncate" style={{ fontFamily: 'var(--font-display)' }}>{product.name}</p>
-                  <p className="text-[#C9920E] text-xs mt-0.5">A${product.price.toFixed(2)}</p>
+                  <p className="mt-0.5"><LivePrice product={product} size="sm" decimals tone="light" /></p>
                   <div className="flex items-center gap-3 mt-3">
                     <button onClick={() => updateQty(product.id, quantity - 1)}
                       className="w-6 h-6 border border-[#C9920E]/25 flex items-center justify-center text-[#2C1A06]/50 hover:border-[#C9920E] hover:text-[#C9920E] transition-colors">

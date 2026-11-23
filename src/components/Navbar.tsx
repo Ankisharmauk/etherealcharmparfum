@@ -5,14 +5,48 @@ import Image from 'next/image'
 import { ShoppingBag, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { useCart } from '@/context/CartContext'
+import { usePromo } from '@/context/PromoContext'
+import { lowestSalePrice } from '@/data/promotion'
+import { STRIP_HEIGHT } from '@/components/PromoOffset'
+
+// STRIP_HEIGHT is the height of the Black Friday Week announcement strip. While it shows, the navbar sits directly beneath it (it never covers the navigation)
+// and the page content is moved down by the same amount (src/components/PromoOffset.tsx).
 
 export default function Navbar() {
   const { count, openCart } = useCart()
+  const { active: promoActive } = usePromo()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-[#C9920E]/25 bg-[#7A4800]/95 backdrop-blur-md">
+      {/* Black Friday Week strip: slim, one line, a link to the shop. Gone automatically when the server says the sale has ended. */}
+      {promoActive && (
+        <Link
+          href="/shop"
+          className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 sm:gap-3 px-3 text-center uppercase"
+          style={{
+            height: STRIP_HEIGHT,
+            background: '#0B0602',
+            borderBottom: '1px solid rgba(232,200,118,0.3)',
+            color: '#E8C876',
+            fontFamily: 'var(--font-sans)',
+            // Scales down on narrow phones so the whole line always fits without clipping.
+            fontSize: 'clamp(8px, 2.3vw, 10px)',
+            letterSpacing: '0.1em',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          <span style={{ fontWeight: 500 }}>Black Friday Week</span>
+          <span aria-hidden="true" style={{ opacity: 0.5 }}>|</span>
+          <span>Parfum from A${lowestSalePrice()}</span>
+          <span aria-hidden="true" style={{ opacity: 0.5 }}>|</span>
+          <span>Ends 30 November</span>
+        </Link>
+      )}
+      <header
+        className="fixed left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-[#C9920E]/25 bg-[#7A4800]/95 backdrop-blur-md"
+        style={{ top: promoActive ? STRIP_HEIGHT : 0 }}
+      >
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"

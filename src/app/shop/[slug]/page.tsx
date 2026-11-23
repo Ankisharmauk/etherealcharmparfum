@@ -2,6 +2,10 @@
 
 import { getProductBySlug, products } from '@/data/products'
 import { useCart } from '@/context/CartContext'
+import { usePromo } from '@/context/PromoContext'
+import { unitPrice } from '@/data/promotion'
+import PriceTag from '@/components/PriceTag'
+import LivePrice from '@/components/LivePrice'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -27,9 +31,11 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const [months, setMonths] = useState<SubscriptionMonths>(DEFAULT_SUBSCRIPTION_MONTHS)
   const [subLoading, setSubLoading] = useState(false)
   const [subError, setSubError] = useState('')
+  const { active: promoActive } = usePromo()
 
   if (!product) notFound()
 
+  const unit = unitPrice(product, promoActive)
   const subPrice = subscriptionPrice(product)
   const interval = SUBSCRIPTION_INTERVALS.find((i) => i.months === months)!
   const renewal = new Date()
@@ -113,10 +119,13 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </h1>
 
             <div className="flex items-baseline gap-4 mb-8">
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: '32px', color: GOLD }}>
-                A${product.price}
-              </span>
+              <PriceTag unit={unit} size="lg" />
             </div>
+            {unit.onSale && (
+              <p className="-mt-5 mb-8" style={{ fontFamily: 'var(--font-sans)', fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(232,200,118,0.7)' }}>
+                Black Friday Week · Ends 30 November
+              </p>
+            )}
 
             <p className="leading-relaxed mb-10" style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', color: 'rgba(245,223,160,0.58)', textAlign: 'justify' }}>
               {product.longDescription}
@@ -148,8 +157,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             {/* Purchase options */}
             <div className="grid grid-cols-2 gap-3 mb-6" role="radiogroup" aria-label="Purchase option">
               {([
-                { value: 'once', title: 'One-time purchase', price: `A$${product.price}` },
-                { value: 'subscribe', title: `Subscribe and save ${SUBSCRIPTION_DISCOUNT_PERCENT}%`, price: `A$${subPrice.toFixed(2)}` },
+                { value: 'once', title: 'One-time purchase', price: <PriceTag unit={unit} size="md" /> },
+                // During Black Friday Week the subscription keeps its usual 10% off the REGULAR price (its Stripe prices are not part of the sale), so the label says exactly that.
+                { value: 'subscribe', title: unit.onSale ? `Subscribe · ${SUBSCRIPTION_DISCOUNT_PERCENT}% off regular price` : `Subscribe and save ${SUBSCRIPTION_DISCOUNT_PERCENT}%`, price: `A$${subPrice.toFixed(2)}` },
               ] as const).map((opt) => {
                 const active = mode === opt.value
                 return (
@@ -216,7 +226,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   </p>
                   <ul className="space-y-2" style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', lineHeight: '19px', color: 'rgba(245,223,160,0.6)' }}>
                     <li>
-                      <strong style={{ color: CREAM, fontWeight: 400 }}>A${subPrice.toFixed(2)}</strong> per delivery, {interval.short}. That is {SUBSCRIPTION_DISCOUNT_PERCENT}% off the one-time price of A${product.price}.
+                      <strong style={{ color: CREAM, fontWeight: 400 }}>A${subPrice.toFixed(2)}</strong> per delivery, {interval.short}. That is {SUBSCRIPTION_DISCOUNT_PERCENT}% off the {unit.onSale ? `regular price (A$${product.price}). Black Friday Week prices apply to one-time purchases only` : 'one-time price'} of A${product.price}.
                     </li>
                     <li>You are charged today, then automatically {interval.short}. Your next renewal is on <span suppressHydrationWarning>{nextRenewal}</span>.</li>
                     <li>It continues until you cancel. There is no minimum commitment.</li>
@@ -274,7 +284,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   </div>
                   <div>
                     <p className="font-light mb-1" style={{ fontFamily: 'var(--font-display)', fontSize: '18px', color: CREAM }}>{p.name}</p>
-                    <p style={{ fontFamily: 'var(--font-display)', fontSize: '15px', color: GOLD }}>A${p.price}</p>
+                    <p><LivePrice product={p} size="sm" /></p>
                   </div>
                   <span
                     className="ml-auto group-hover:translate-x-1 transition-transform duration-300"

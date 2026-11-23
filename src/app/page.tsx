@@ -2,6 +2,13 @@ import type { Metadata } from 'next'
 import GoldParticles from '@/components/GoldParticles'
 import Link from 'next/link'
 import Image from 'next/image'
+import BlackFridaySection from '@/components/BlackFridaySection'
+import PriceTag from '@/components/PriceTag'
+import { products } from '@/data/products'
+import { isPromoActive, unitPrice } from '@/data/promotion'
+
+// Rendered per request so the Black Friday Week section and prices follow the server clock (src/data/promotion.ts).
+export const dynamic = 'force-dynamic'
 
 const BASE_URL = 'https://www.theetherealcharm.com'
 
@@ -100,6 +107,7 @@ const speakableSchema = {
 }
 
 export default function HomePage() {
+  const promoActive = isPromoActive(new Date())
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -178,6 +186,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Black Friday Week: directly under the hero, only while the sale is on (server clock) */}
+      <BlackFridaySection active={promoActive} />
 
       {/* Captivating Fragrance */}
       <section className="py-28 bg-[#FBF4E3]">
@@ -369,8 +380,8 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { name: 'The Mini Ethereal Charm', size: '10 ml', price: 'A$59', href: '/shop/mini-ethereal-charm', badge: 'Perfect gift' },
-              { name: 'The Ethereal Charm', size: '25 ml', price: 'A$119', href: '/shop/ethereal-charm-25ml', badge: 'Limited offer' },
+              { name: 'The Mini Ethereal Charm', size: '10 ml', productId: 'mini-ethereal-charm', href: '/shop/mini-ethereal-charm', badge: 'Perfect gift' },
+              { name: 'The Ethereal Charm', size: '25 ml', productId: 'ethereal-charm-25ml', href: '/shop/ethereal-charm-25ml', badge: 'Limited offer' },
             ].map((p) => (
               <Link
                 key={p.href}
@@ -397,7 +408,7 @@ export default function HomePage() {
                   <p className="text-[#F5DFA0] text-xl font-light mb-1" style={{ fontFamily: 'var(--font-display)' }}>{p.name}</p>
                   <p className="text-[#F5DFA0]/40 text-xs mb-3" style={{ fontFamily: 'var(--font-sans)' }}>{p.size} · Parfum</p>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-[#C9920E] text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.price}</span>
+                    <PriceTag unit={unitPrice(products.find((x) => x.id === p.productId)!, promoActive)} size="md" />
                   </div>
                 </div>
                 <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[#C9920E]/40 group-hover:text-[#C9920E] transition-colors text-xl">→</span>

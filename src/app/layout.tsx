@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Jost } from 'next/font/google'
 import './globals.css'
 import { CartProvider } from '@/context/CartContext'
+import { PromoProvider } from '@/context/PromoContext'
+import PromoOffset from '@/components/PromoOffset'
+import { promoState } from '@/data/promotion'
 import Navbar from '@/components/Navbar'
 import CartDrawer from '@/components/CartDrawer'
 import Footer from '@/components/Footer'
@@ -108,18 +111,25 @@ const websiteSchema = {
   },
 }
 
+// Rendered per request so the Black Friday Week prices follow the SERVER clock (src/data/promotion.ts): the sale starts and ends on time with no deploy, and an old cached page
+// can never show a sale price after it has ended.
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const promo = promoState(new Date())
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col bg-[#0A0806]" style={{ fontFamily: 'var(--font-sans), sans-serif' }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-        <CartProvider>
-          <Navbar />
-          <CartDrawer />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </CartProvider>
+        <PromoProvider initial={promo}>
+          <CartProvider>
+            <Navbar />
+            <CartDrawer />
+            <PromoOffset>{children}</PromoOffset>
+            <Footer />
+          </CartProvider>
+        </PromoProvider>
       </body>
     </html>
   )

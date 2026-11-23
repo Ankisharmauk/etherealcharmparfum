@@ -2,6 +2,11 @@ import { products } from '@/data/products'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import PriceTag from '@/components/PriceTag'
+import { isPromoActive, unitPrice } from '@/data/promotion'
+
+// Rendered per request so the Black Friday Week prices follow the server clock (src/data/promotion.ts).
+export const dynamic = 'force-dynamic'
 
 const BASE_URL = 'https://www.theetherealcharm.com'
 
@@ -28,6 +33,7 @@ const GOLD = '#C9920E'
 const CREAM = '#F5DFA0'
 
 export default function ShopPage() {
+  const promoActive = isPromoActive(new Date())
   return (
     <>
       {/* Page header */}
@@ -105,9 +111,7 @@ export default function ShopPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-baseline gap-3">
-                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '22px', color: GOLD }}>
-                      A${product.price}
-                    </span>
+                    <PriceTag unit={unitPrice(product, promoActive)} size="md" />
                   </div>
                   <span
                     className="tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-300"

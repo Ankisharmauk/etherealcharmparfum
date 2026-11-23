@@ -5,6 +5,15 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Loader2 } from 'lucide-react'
+import { usePrice } from '@/context/PromoContext'
+import LivePrice from '@/components/LivePrice'
+import type { Product } from '@/data/products'
+
+// The price of a line (unit price right now x quantity), from the same rules the server uses when the customer pays.
+function LineTotal({ product, quantity }: { product: Product; quantity: number }) {
+  const unit = usePrice(product)
+  return <>A${(unit.price * quantity).toFixed(2)}</>
+}
 
 export default function CheckoutPage() {
   const { items, total } = useCart()
@@ -59,10 +68,11 @@ export default function CheckoutPage() {
                   <div className="flex-1">
                     <p className="text-[#2C1A06] text-sm font-light" style={{ fontFamily: 'var(--font-display)' }}>{product.name}</p>
                     <p className="text-[#2C1A06]/40 text-xs mt-1" style={{ fontFamily: 'var(--font-sans)' }}>{product.subtitle}</p>
+                    <p className="mt-2"><LivePrice product={product} size="sm" decimals tone="light" /></p>
                   </div>
                   <div className="text-right">
                     <p className="text-[#2C1A06]/40 text-xs mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Qty: {quantity}</p>
-                    <p className="text-[#C9920E] text-sm" style={{ fontFamily: 'var(--font-display)' }}>A${(product.price * quantity).toFixed(2)}</p>
+                    <p className="text-[#C9920E] text-sm" style={{ fontFamily: 'var(--font-display)' }}><LineTotal product={product} quantity={quantity} /></p>
                   </div>
                 </div>
               ))}
@@ -79,7 +89,7 @@ export default function CheckoutPage() {
                 {items.map(({ product, quantity }) => (
                   <div key={product.id} className="flex justify-between text-[#2C1A06]/50">
                     <span style={{ fontFamily: 'var(--font-sans)' }}>{product.name} × {quantity}</span>
-                    <span style={{ fontFamily: 'var(--font-display)' }}>A${(product.price * quantity).toFixed(2)}</span>
+                    <span style={{ fontFamily: 'var(--font-display)' }}><LineTotal product={product} quantity={quantity} /></span>
                   </div>
                 ))}
               </div>
